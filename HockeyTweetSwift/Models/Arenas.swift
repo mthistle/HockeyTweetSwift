@@ -10,17 +10,20 @@ import Foundation
 
 class Arenas {
     
-    var arenas: [String]
+    var arenas = [String]()
     
     init() {
-        arenas = [ "No arenas found." ]
         if let path: String = NSBundle.mainBundle().pathForResource("Arenas", ofType: "plist") {
             let teamArray = NSArray(contentsOfFile: path)
             for team in teamArray {
                 arenas.append(team["Arena"] as String)
             }
+            // Sort array in place
+            sort(&arenas, { s1, s2 in return s1.lowercaseString < s2.lowercaseString })
         }
-        // Sort array in place
-        sort(&arenas, { s1, s2 in return s1.lowercaseString < s2.lowercaseString })
+        // Add a no arenas placeholder if none added
+        if arenas.isEmpty {
+            arenas = [ "No arenas found." ]
+        }
     }
 }

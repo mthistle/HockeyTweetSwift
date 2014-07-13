@@ -11,9 +11,15 @@ import UIKit
 class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 
     let team: Teams
-
+    // When we switch views we need to keep the last selected row when this view
+    // was active. We also want to start in the middle when we select a picker.
+    //var selectedTeamRow: Int
+    //var selectedPlayerRow: Int
+    
     init() {
         team = Teams()
+        //selectedTeamRow = team.teamTLA.count / 2
+        //selectedPlayerRow = team.playersOnTeam(team.teamTLA[selectedTeamRow]).count / 2
         super.init()
     }
 
@@ -54,7 +60,7 @@ class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         case 0:
             rowText = team.teamNames[row]
         case 1:
-            if let players = team.rosters[team.teamTLA[pickerView.selectedRowInComponent(0)]] {
+            if let players = team.playersOnTeam(team.teamTLA[pickerView.selectedRowInComponent(0)]) {
                 rowText = players[row]
             } else {
                 rowText = "--"
@@ -72,7 +78,7 @@ class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     }
 
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
-        
+
     }
 
 }

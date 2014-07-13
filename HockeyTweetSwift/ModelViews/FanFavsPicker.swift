@@ -11,9 +11,13 @@ import UIKit
 class FanFavsPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 
     let fanFavShortcuts: [String]
-
+    // When we switch views we need to keep the last selected row when this view
+    // was active. We also want to start in the middle when we select a picker.
+    var selectedRow: Int
+    
     init() {
         fanFavShortcuts = FanFavs().fanFavs
+        selectedRow = fanFavShortcuts.count / 2
     }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
@@ -46,7 +50,7 @@ class FanFavsPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 //    }
 
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
-
+        selectedRow = row
     }
 
 }

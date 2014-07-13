@@ -11,9 +11,13 @@ import UIKit
 class PenaltyPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
                             
     let penalty: [String]
-
+    // When we switch views we need to keep the last selected row when this view
+    // was active. We also want to start in the middle when we select a picker.
+    var selectedRow: Int
+    
     init()  {
         penalty = Penalties().penalties
+        selectedRow = penalty.count / 2
     }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
@@ -40,7 +44,7 @@ class PenaltyPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     //func pickerView(pickerView: UIPickerView!, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView!
 
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
-        
+        selectedRow = row
     }
 
 }

@@ -96,6 +96,7 @@
                         <outlet property="actionStripContainer" destination="iMN-qk-SOY" id="a3b-7w-klE"/>
                         <outlet property="charactersRemainingLabel" destination="yeU-yc-dsl" id="Whh-Uh-lPL"/>
                         <outlet property="pickerView" destination="TVg-zn-a1n" id="lMj-JW-X2B"/>
+                        <outlet property="shareButton" destination="rqf-5S-RcW" id="r1h-eb-1rO"/>
                         <outlet property="textView" destination="PiT-Pl-dtU" id="xls-AX-bCN"/>
                     </connections>
                 </viewController>

@@ -96,7 +96,7 @@ class Teams: NSObject {
         super.init()
     }
     
-    func rosterForTeam(team: String) -> Array<String>! {
+    func playersOnTeam(team: String) -> Array<String>! {
         //if let players: NSDictionary = rosters["players"] as? NSDictionary {
         //    let ns_team: NSString = NSString(string: team)
         //for teamPlayers in players.objectForKey(ns_team) {

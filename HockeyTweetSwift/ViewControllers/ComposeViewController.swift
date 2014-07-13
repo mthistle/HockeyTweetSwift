@@ -8,9 +8,35 @@
 
 import UIKit
 
+// We need to know when to commit a change to the UITextView from the UIPickerView
+// and when the selection has changed. I will do that by tracking the currently
+// selected text with a variable. Then when the text changes that is coming from
+// from the picker I can update the current text.
 protocol ComposeViewProtocol {
     // Called when a user selects a text item from the picker
-    func didAddText(textToAdd: String)
+    func didChooseUIPickerText(textToAdd: String)
+    // Called when a user dismisses the active picker by changing pickers or
+    // switching to the UITextView to enter text
+    func didResignFirstResponderForUIPickerView()
+}
+
+enum ShareResult {
+    case ShareSuccess, ShareErrUnknown, ShareAccountError, ShareNetworkError, ShareCancelled
+    
+    func description() -> String {
+        switch self {
+        case .ShareSuccess:
+            return "Share Success"
+        case .ShareErrUnknown:
+            return "Share Error Unknown"
+        case .ShareAccountError:
+            return "Share Account Error"
+        case .ShareNetworkError:
+            return "Share Network Error"
+        case .ShareCancelled:
+            return "Share Cancelled"
+        }
+    }
 }
 
 class ComposeViewController: UIViewController, ActionStripSelection, UITextViewDelegate, ComposeViewProtocol {
@@ -19,6 +45,7 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     @IBOutlet var pickerView               : UIPickerView
     @IBOutlet var textView                 : UITextView
     @IBOutlet var charactersRemainingLabel : UILabel
+    @IBOutlet var shareButton              : UIButton
     
     var penalties : PenaltyPicker
     var teams     : TeamPicker
@@ -26,67 +53,82 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     var fanfavs   : FanFavsPicker
     
     let maxChars  : Int = 140
+    var currentPickerText: String
+    var currentCommittedText: String
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        self.penalties = PenaltyPicker()
-        self.teams = TeamPicker()
-        self.arenas = ArenaPicker()
-        self.fanfavs = FanFavsPicker()
+        penalties = PenaltyPicker()
+        teams = TeamPicker()
+        arenas = ArenaPicker()
+        fanfavs = FanFavsPicker()
+        currentPickerText = ""
+        currentCommittedText = ""
+        textView.text = ""
         super.init(nibName: nil, bundle: nil)
     }
     
     init(coder aDecoder: NSCoder!) {
-        self.penalties = PenaltyPicker()
-        self.teams = TeamPicker()
-        self.arenas = ArenaPicker()
-        self.fanfavs = FanFavsPicker()
+        penalties = PenaltyPicker()
+        teams = TeamPicker()
+        arenas = ArenaPicker()
+        fanfavs = FanFavsPicker()
+        currentPickerText = ""
+        currentCommittedText = ""
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.pickerView.dataSource = self.penalties
-        self.pickerView.delegate = self.penalties
-        self.pickerView.reloadAllComponents()
-        self.textView.delegate = self
+        pickerView.dataSource = penalties
+        pickerView.delegate = penalties
+        pickerView.reloadAllComponents()
+        textView.delegate = self
+        textView.text = ""
+        
+        // Set picker delegate
+        arenas.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        NSLog("Danger Will Robinson - Low Memory Detected");
     }
 
     func didPressTeamsButton() {
-        self.pickerView.dataSource = self.teams
-        self.pickerView.delegate = self.teams
-        self.pickerView.reloadAllComponents()
-        self.textView.resignFirstResponder()
+        pickerView.dataSource = teams
+        pickerView.delegate = teams
+        pickerView.reloadAllComponents()
+        textView.resignFirstResponder()
     }
 
     func didPressArenasButton() {
-        self.pickerView.dataSource = self.arenas
-        self.pickerView.delegate = self.arenas
-        self.pickerView.reloadAllComponents()
-        self.textView.resignFirstResponder()
+        pickerView.dataSource = arenas
+        pickerView.delegate = arenas
+        pickerView.selectRow(arenas.selectedRow, inComponent: 0, animated: false)
+        pickerView.reloadAllComponents()
+        textView.resignFirstResponder()
     }
 
     func didPressFanFavsButton() {
-        self.pickerView.dataSource = self.fanfavs
-        self.pickerView.delegate = self.fanfavs
-        self.pickerView.reloadAllComponents()
-        self.textView.resignFirstResponder()
+        pickerView.dataSource = fanfavs
+        pickerView.delegate = fanfavs
+        pickerView.selectRow(fanfavs.selectedRow, inComponent: 0, animated: false)
+        pickerView.reloadAllComponents()
+        textView.resignFirstResponder()
     }
 
     func didPressPenalitesButton() {
-        self.pickerView.dataSource = self.penalties
-        self.pickerView.delegate = self.penalties
-        self.pickerView.reloadAllComponents()
-        self.textView.resignFirstResponder()
+        pickerView.dataSource = penalties
+        pickerView.delegate = penalties
+        pickerView.selectRow(penalties.selectedRow, inComponent: 0, animated: false)
+        pickerView.reloadAllComponents()
+        textView.resignFirstResponder()
    }
 
-    func willPresentShareDialog() {
-
+    func didPressShareButton() {
+        NSLog("Share Button")
     }
 
     func didDismissShareDialog(shareResult: ShareResult) {
@@ -95,18 +137,27 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
             NSLog("\(shareResult)")
         default:
             textView.text = ""
-            charactersRemainingLabel.text = "140"
-            // TODO: can I used atrributed test to change the ciolor?
+            charactersRemainingLabel.text = "\(maxChars)"
+            charactersRemainingLabel.textColor = UIColor.blackColor()
         }
         
     }
     
-    func didAddText(textToAdd: String) {
+    func didChooseUIPickerText(textToAdd: String) {
         if let currentText = textView.text {
             textView.text = "\(currentText) \(textToAdd)"
         }
-        // TODO: Update char remaining count
-        // TODO: can I used atrributed test to change the ciolor?
+        let charsUsed = maxChars - countElements(textView.text!)
+        charactersRemainingLabel.text = "\(charsUsed)"
+        if charsUsed < 0 {
+            charactersRemainingLabel.textColor = UIColor.redColor()
+        } else {
+            charactersRemainingLabel.textColor = UIColor.blackColor()
+        }
+    }
+    
+    func didResignFirstResponderForUIPickerView() {
+        
     }
     
     // called when 'return' key pressed
@@ -129,6 +180,8 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     
     // called when clear button pressed. return NO to ignore (no notifications)
     func textFieldShouldClear(textField: UITextField!) -> Bool {
+        charactersRemainingLabel.text = "\(maxChars)"
+        charactersRemainingLabel.textColor = UIColor.blackColor()
         return true
     }
     

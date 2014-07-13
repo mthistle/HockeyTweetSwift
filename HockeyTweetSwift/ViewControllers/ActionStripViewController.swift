@@ -8,32 +8,11 @@
 
 import UIKit
 
-enum ShareResult {
-    case ShareSuccess, ShareErrUnknown, ShareAccountError, ShareNetworkError, ShareCancelled
-
-    func description() -> String {
-        switch self {
-        case .ShareSuccess:
-            return "Share Success"
-        case .ShareErrUnknown:
-            return "Share Error Unknown"
-        case .ShareAccountError:
-            return "Share Account Error"
-        case .ShareNetworkError:
-            return "Share Network Error"
-        case .ShareCancelled:
-            return "Share Cancelled"
-        }
-    }
-}
-
 protocol ActionStripSelection {
     func didPressTeamsButton()
     func didPressArenasButton()
     func didPressFanFavsButton()
     func didPressPenalitesButton()
-    func willPresentShareDialog()
-    func didDismissShareDialog(shareResult: ShareResult)
 }
 
 class ActionStripViewController: UIViewController {
@@ -43,7 +22,6 @@ class ActionStripViewController: UIViewController {
     @IBOutlet var arenasButton: UIButton
     @IBOutlet var fanFavsButton: UIButton
     @IBOutlet var penaltiessButton: UIButton
-    @IBOutlet var shareButton: UIButton
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nil, bundle: nil)
@@ -61,32 +39,28 @@ class ActionStripViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        NSLog("Danger Will Robinson - Low Memory Detected");
     }
     
     
     @IBAction func didPressTeamsButton(sender: UIButton) {
         NSLog("Teams Button")
-        self.delegate?.didPressTeamsButton()
+        delegate?.didPressTeamsButton()
     }
 
     @IBAction func didPressArenasButton(sender: UIButton) {
         NSLog("Arenas Button")
-        self.delegate?.didPressArenasButton()
+        delegate?.didPressArenasButton()
     }
 
     @IBAction func didPressFanFavsButton(sender: UIButton) {
         NSLog("FanFavs Button")
-        self.delegate?.didPressFanFavsButton()
+        delegate?.didPressFanFavsButton()
     }
 
     @IBAction func didPressPenaltiesButton(sender: UIButton) {
         NSLog("Penalties Button")
-        self.delegate?.didPressPenalitesButton()
+        delegate?.didPressPenalitesButton()
     }
 
-    @IBAction func didPressShareButton(sender: UIButton) {
-        NSLog("Share Button")
-        self.delegate?.willPresentShareDialog()
-        // TODO: Present the share dialog, when it returns fire didDismissShareDialog
-    }
 }
