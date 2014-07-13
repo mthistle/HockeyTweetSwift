@@ -10,18 +10,10 @@ import UIKit
 
 class ArenaPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var arenas: Array<String>
+    let arenas: Array<String>
     
     init() {
-        self.arenas = [ "No arenas found." ]
-        if let path: String = NSBundle.mainBundle().pathForResource("Arenas", ofType: "plist") {
-            let teamArray = NSArray(contentsOfFile: path)
-            for team in teamArray {
-                self.arenas.append(team["Arena"] as String)
-            }
-        }
-        // Sort array in place
-        sort(&self.arenas, { s1, s2 in return s1.lowercaseString < s2.lowercaseString })
+        arenas = Arenas().arenas
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {

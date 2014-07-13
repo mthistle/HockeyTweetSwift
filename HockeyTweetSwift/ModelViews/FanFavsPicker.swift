@@ -10,36 +10,10 @@ import UIKit
 
 class FanFavsPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    var fanFavShortcuts = [
-        "blueline",
-        "breakaway",
-        "faceoff",
-        "fight",
-        "great save",
-        "good play",
-        "Home Ice",
-        "nice pass",
-        "nice hit",
-        "offside",
-        "overtime",
-        "penalty",
-        "penalty killing",
-        "penalty shot",
-        "Playoffs",
-        "power play",
-        "pulled the goalie",
-        "Regular Season",
-        "shoot the puck",
-        "shoots, HE SCORES!!!",
-        "shorthanded",
-        "Stanley Cup",
-        "there's a penalty coming",
-        "visitors",
-        "wide open net"]
+    let fanFavShortcuts: [String]
 
     init() {
-        // Sort array in place
-        sort(&fanFavShortcuts, { s1, s2 in return s1.lowercaseString < s2.lowercaseString })
+        fanFavShortcuts = FanFavs().fanFavs
     }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {

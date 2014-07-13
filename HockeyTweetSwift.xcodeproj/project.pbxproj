@@ -19,12 +19,16 @@
 		930B243C1970DD2E0046D13B /* rink.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24361970DD2E0046D13B /* rink.png */; };
 		930B24401970DE3A0046D13B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930B243F1970DE3A0046D13B /* Images.xcassets */; };
 		936DC06E197258F8003DBB1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC06D197258F8003DBB1A /* AppDelegate.swift */; };
+		936DC070197326AE003DBB1A /* Arenas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC06F197326AE003DBB1A /* Arenas.swift */; };
+		936DC072197326BE003DBB1A /* FanFavs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC071197326BE003DBB1A /* FanFavs.swift */; };
+		936DC074197326CD003DBB1A /* Penalties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC073197326CD003DBB1A /* Penalties.swift */; };
+		936DC076197326DE003DBB1A /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC075197326DE003DBB1A /* Teams.swift */; };
+		936DC07C19732786003DBB1A /* TeamPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC07819732786003DBB1A /* TeamPicker.swift */; };
+		936DC07D19732786003DBB1A /* ArenaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC07919732786003DBB1A /* ArenaPicker.swift */; };
+		936DC07E19732786003DBB1A /* PenaltyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC07A19732786003DBB1A /* PenaltyPicker.swift */; };
+		936DC07F19732786003DBB1A /* FanFavsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC07B19732786003DBB1A /* FanFavsPicker.swift */; };
 		9391B3141970DA2B00963250 /* ActionStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B30D1970DA2B00963250 /* ActionStripViewController.swift */; };
-		9391B3161970DA2B00963250 /* ArenaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B30F1970DA2B00963250 /* ArenaPicker.swift */; };
 		9391B3171970DA2B00963250 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3101970DA2B00963250 /* ComposeViewController.swift */; };
-		9391B3181970DA2B00963250 /* FanFavsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3111970DA2B00963250 /* FanFavsPicker.swift */; };
-		9391B3191970DA2B00963250 /* PenaltyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3121970DA2B00963250 /* PenaltyPicker.swift */; };
-		9391B31A1970DA2B00963250 /* TeamPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3131970DA2B00963250 /* TeamPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +60,18 @@
 		930B24361970DD2E0046D13B /* rink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rink.png; path = HockeyTweetSwift/Images/rink.png; sourceTree = SOURCE_ROOT; };
 		930B243F1970DE3A0046D13B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HockeyTweetSwift/Images.xcassets; sourceTree = "<group>"; };
 		936DC06D197258F8003DBB1A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = HockeyTweetSwift/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		936DC06F197326AE003DBB1A /* Arenas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Arenas.swift; path = HockeyTweetSwift/Models/Arenas.swift; sourceTree = SOURCE_ROOT; };
+		936DC071197326BE003DBB1A /* FanFavs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FanFavs.swift; path = HockeyTweetSwift/Models/FanFavs.swift; sourceTree = SOURCE_ROOT; };
+		936DC073197326CD003DBB1A /* Penalties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Penalties.swift; path = HockeyTweetSwift/Models/Penalties.swift; sourceTree = SOURCE_ROOT; };
+		936DC075197326DE003DBB1A /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Teams.swift; path = HockeyTweetSwift/Models/Teams.swift; sourceTree = SOURCE_ROOT; };
+		936DC07819732786003DBB1A /* TeamPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPicker.swift; sourceTree = "<group>"; };
+		936DC07919732786003DBB1A /* ArenaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArenaPicker.swift; sourceTree = "<group>"; };
+		936DC07A19732786003DBB1A /* PenaltyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenaltyPicker.swift; sourceTree = "<group>"; };
+		936DC07B19732786003DBB1A /* FanFavsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanFavsPicker.swift; sourceTree = "<group>"; };
 		93843752196FB5910053B320 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		93843753196FB5910053B320 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		9391B30D1970DA2B00963250 /* ActionStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStripViewController.swift; sourceTree = "<group>"; };
-		9391B30F1970DA2B00963250 /* ArenaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArenaPicker.swift; sourceTree = "<group>"; };
 		9391B3101970DA2B00963250 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
-		9391B3111970DA2B00963250 /* FanFavsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanFavsPicker.swift; sourceTree = "<group>"; };
-		9391B3121970DA2B00963250 /* PenaltyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenaltyPicker.swift; sourceTree = "<group>"; };
-		9391B3131970DA2B00963250 /* TeamPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,10 @@
 				93843752196FB5910053B320 /* ComposeViewController.m */,
 				6BB4225A196BB894002D634A /* Players.h */,
 				6BB4225B196BB894002D634A /* Players.m */,
+				936DC06F197326AE003DBB1A /* Arenas.swift */,
+				936DC071197326BE003DBB1A /* FanFavs.swift */,
+				936DC073197326CD003DBB1A /* Penalties.swift */,
+				936DC075197326DE003DBB1A /* Teams.swift */,
 			);
 			name = Models;
 			path = HockeyTweetSwift/Models;
@@ -144,11 +156,12 @@
 			isa = PBXGroup;
 			children = (
 				936DC06D197258F8003DBB1A /* AppDelegate.swift */,
-				9391B30C1970DA2B00963250 /* ViewControllers */,
-				6BB42265196BBC8F002D634A /* Resources */,
-				6BB42255196BB894002D634A /* Models */,
 				6BB42234196BB493002D634A /* Images */,
+				6BB42255196BB894002D634A /* Models */,
+				936DC0771973270D003DBB1A /* ModelViews */,
+				6BB42265196BBC8F002D634A /* Resources */,
 				6BFCCA57196A6A2500AA661D /* Supporting Files */,
+				9391B30C1970DA2B00963250 /* ViewControllers */,
 			);
 			name = SwiftHockeyTweet;
 			path = SwiftTest;
@@ -180,15 +193,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		936DC0771973270D003DBB1A /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+				936DC07919732786003DBB1A /* ArenaPicker.swift */,
+				936DC07B19732786003DBB1A /* FanFavsPicker.swift */,
+				936DC07A19732786003DBB1A /* PenaltyPicker.swift */,
+				936DC07819732786003DBB1A /* TeamPicker.swift */,
+			);
+			name = ModelViews;
+			path = HockeyTweetSwift/ModelViews;
+			sourceTree = SOURCE_ROOT;
+		};
 		9391B30C1970DA2B00963250 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				9391B30D1970DA2B00963250 /* ActionStripViewController.swift */,
-				9391B30F1970DA2B00963250 /* ArenaPicker.swift */,
 				9391B3101970DA2B00963250 /* ComposeViewController.swift */,
-				9391B3111970DA2B00963250 /* FanFavsPicker.swift */,
-				9391B3121970DA2B00963250 /* PenaltyPicker.swift */,
-				9391B3131970DA2B00963250 /* TeamPicker.swift */,
 			);
 			name = ViewControllers;
 			path = HockeyTweetSwift/ViewControllers;
@@ -301,12 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9391B3181970DA2B00963250 /* FanFavsPicker.swift in Sources */,
-				9391B3161970DA2B00963250 /* ArenaPicker.swift in Sources */,
-				9391B31A1970DA2B00963250 /* TeamPicker.swift in Sources */,
-				9391B3191970DA2B00963250 /* PenaltyPicker.swift in Sources */,
+				936DC07C19732786003DBB1A /* TeamPicker.swift in Sources */,
+				936DC07E19732786003DBB1A /* PenaltyPicker.swift in Sources */,
+				936DC070197326AE003DBB1A /* Arenas.swift in Sources */,
+				936DC076197326DE003DBB1A /* Teams.swift in Sources */,
+				936DC074197326CD003DBB1A /* Penalties.swift in Sources */,
+				936DC07F19732786003DBB1A /* FanFavsPicker.swift in Sources */,
+				936DC072197326BE003DBB1A /* FanFavs.swift in Sources */,
 				936DC06E197258F8003DBB1A /* AppDelegate.swift in Sources */,
 				9391B3141970DA2B00963250 /* ActionStripViewController.swift in Sources */,
+				936DC07D19732786003DBB1A /* ArenaPicker.swift in Sources */,
 				9391B3171970DA2B00963250 /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

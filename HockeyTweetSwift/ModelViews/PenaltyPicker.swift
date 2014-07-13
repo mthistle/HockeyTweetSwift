@@ -10,49 +10,10 @@ import UIKit
 
 class PenaltyPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
                             
-    var penalty = [
-        "Joining A Fight",
-        "Abuse Of Officials",
-        "Aggressor",
-        "Attempt To Injure",
-        "Boarding",
-        "Butt-Ending",
-        "Charging",
-        "Checking From Behind",
-        "Clipping",
-        "Cross Checking",
-        "Delay of Game",
-        "Diving",
-        "Elbowing",
-        "Fighting",
-        "Goaltender Interference",
-        "Hand Pass",
-        "Head Butting",
-        "High Sticking",
-        "Holding",
-        "Holding the Stick",
-        "Hooking",
-        "Icing",
-        "Illegal Equipment",
-        "Illegal Substitution",
-        "Instigator",
-        "Interference",
-        "Kicking",
-        "Kneeing",
-        "Penalty Shot",
-        "Roughing",
-        "Slashing",
-        "Slew Footing",
-        "Spearing",
-        "Starting the Wrong Lineup",
-        "Too Many Men on the Ice",
-        "Tripping",
-        "Unsportsmanlike Conduct",
-        "WashOut"]
+    let penalty: [String]
 
     init()  {
-        // Sort array and return new sorted array
-        penalty = sorted(penalty, { s1, s2 in return s1 < s2 })
+        penalty = Penalties().penalties
     }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
