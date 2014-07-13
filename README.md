@@ -16,4 +16,4 @@ What works?
 What does not work yet?
 * Networking not implemented yet.
 
-Further details coming at: http://droolfactory.blogspot.com
+Further details at: http://droolfactory.blogspot.com
