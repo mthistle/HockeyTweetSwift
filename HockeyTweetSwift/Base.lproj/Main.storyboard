@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o2U-Zw-fHK">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+    </dependencies>
+    <scenes>
+        <!--HockeyTweetSwift-->
+        <scene sceneID="sjB-Lo-uCe">
+            <objects>
+                <viewController title="HockeyTweetSwift" id="o2U-Zw-fHK" customClass="ComposeViewController" customModule="HockeyTweetSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G6H-bk-QYl"/>
+                        <viewControllerLayoutGuide type="bottom" id="xYP-kW-HjV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rqT-ef-pgo">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-qk-SOY">
+                                <rect key="frame" x="0.0" y="262" width="480" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="M3v-SE-3gg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M3v-SE-3gg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="M3v-SE-3gg"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="0Ze-pV-tAd" kind="embed" identifier="embedActionStripSegue" id="2fF-ng-upx"/>
+                                </connections>
+                            </containerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVg-zn-a1n">
+                                <rect key="frame" x="0.0" y="318" width="480" height="162"/>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ng-0b-CrB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-sC-WdL">
+                                        <rect key="frame" x="14" y="20" width="424" height="194"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="194" id="2AY-bF-yyM"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="11" y="15" width="264" height="164"/>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="o2U-Zw-fHK" id="sD2-bE-Xd5"/>
+                                        </connections>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htO-dG-JjG">
+                                        <rect key="frame" x="9" y="229" width="29" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="htO-dG-JjG" firstAttribute="top" secondItem="DYl-sC-WdL" secondAttribute="bottom" constant="15" id="4RJ-Su-jnF"/>
+                                    <constraint firstItem="htO-dG-JjG" firstAttribute="leading" secondItem="9ng-0b-CrB" secondAttribute="leading" constant="11" id="iq5-Ps-K8U"/>
+                                    <constraint firstAttribute="trailing" secondItem="htO-dG-JjG" secondAttribute="trailing" constant="246" id="jjf-eh-CfC"/>
+                                    <constraint firstAttribute="bottom" secondItem="htO-dG-JjG" secondAttribute="bottom" id="mkf-fb-8Ll"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="DYl-sC-WdL"/>
+                                        <exclude reference="htO-dG-JjG"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="4RJ-Su-jnF"/>
+                                        <exclude reference="iq5-Ps-K8U"/>
+                                        <exclude reference="jjf-eh-CfC"/>
+                                        <exclude reference="mkf-fb-8Ll"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="35" width="286" height="215"/>
+                                    <mask key="subviews">
+                                        <include reference="DYl-sC-WdL"/>
+                                        <include reference="htO-dG-JjG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="35" width="286" height="215"/>
+                                    <mask key="constraints">
+                                        <include reference="4RJ-Su-jnF"/>
+                                        <include reference="iq5-Ps-K8U"/>
+                                        <include reference="jjf-eh-CfC"/>
+                                        <include reference="mkf-fb-8Ll"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TVg-zn-a1n" firstAttribute="trailing" secondItem="iMN-qk-SOY" secondAttribute="trailing" id="4zh-tt-siB"/>
+                            <constraint firstAttribute="bottom" secondItem="TVg-zn-a1n" secondAttribute="bottom" id="8Aq-7F-Dld"/>
+                            <constraint firstItem="iMN-qk-SOY" firstAttribute="leading" secondItem="rqT-ef-pgo" secondAttribute="leading" id="HkK-fP-rBY"/>
+                            <constraint firstItem="TVg-zn-a1n" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" constant="8" id="I1I-vJ-NEC"/>
+                            <constraint firstAttribute="trailing" secondItem="TVg-zn-a1n" secondAttribute="trailing" id="JlD-cT-mOg"/>
+                            <constraint firstItem="TVg-zn-a1n" firstAttribute="leading" secondItem="iMN-qk-SOY" secondAttribute="leading" id="KvB-6p-U2C"/>
+                            <constraint firstItem="TVg-zn-a1n" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" constant="8" symbolic="YES" id="WC5-L3-l5k"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="9ng-0b-CrB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="I1I-vJ-NEC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="I1I-vJ-NEC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="9ng-0b-CrB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="Jlb-5F-kah"/>
+                    <connections>
+                        <outlet property="actionStripContainer" destination="iMN-qk-SOY" id="a3b-7w-klE"/>
+                        <outlet property="charactersRemainingLabel" destination="htO-dG-JjG" id="Btf-PB-8j6"/>
+                        <outlet property="pickerView" destination="TVg-zn-a1n" id="lMj-JW-X2B"/>
+                        <outlet property="textView" destination="DYl-sC-WdL" id="2Ti-uB-iYI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uO-PR-H6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514" y="1987"/>
+        </scene>
+        <!--Action Strip View Controller-->
+        <scene sceneID="VDN-Ua-pc2">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0Ze-pV-tAd" customClass="ActionStripViewController" customModule="HockeyTweetSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1XV-vJ-YdK"/>
+                        <viewControllerLayoutGuide type="bottom" id="YII-ze-NTt"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0yb-ZS-hit">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="48"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQr-OY-x7w">
+                                <rect key="frame" x="20" y="9" width="45" height="30"/>
+                                <state key="normal" title="Teams">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressTeamsButton:" destination="0Ze-pV-tAd" eventType="touchUpInside" id="5tQ-fP-LVP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEW-JQ-dtQ">
+                                <rect key="frame" x="92" y="9" width="48" height="30"/>
+                                <state key="normal" title="Arenas">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressArenasButton:" destination="0Ze-pV-tAd" eventType="touchUpInside" id="bL0-TW-mER"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeP-CE-lTV">
+                                <rect key="frame" x="167" y="9" width="58" height="30"/>
+                                <state key="normal" title="FanFavs">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressFanFavsButton:" destination="0Ze-pV-tAd" eventType="touchUpInside" id="xln-e2-6yD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cid-Zl-HYQ">
+                                <rect key="frame" x="248" y="9" width="63" height="30"/>
+                                <state key="normal" title="Penalties">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressPenaltiesButton:" destination="0Ze-pV-tAd" eventType="touchUpInside" id="2zx-SE-RVn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-fA-BfX">
+                                <rect key="frame" x="414" y="9" width="40" height="30"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressShareButton:" destination="0Ze-pV-tAd" eventType="touchUpInside" id="tdL-Xs-cFV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="arenasButton" destination="nEW-JQ-dtQ" id="UbF-nr-qFI"/>
+                        <outlet property="fanFavsButton" destination="CeP-CE-lTV" id="Ds0-gh-Mz0"/>
+                        <outlet property="penaltiessButton" destination="Cid-Zl-HYQ" id="Tpq-H3-0Eg"/>
+                        <outlet property="shareButton" destination="n1Y-fA-BfX" id="LXL-3O-oai"/>
+                        <outlet property="teamsButton" destination="qQr-OY-x7w" id="S19-w0-MaJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73N-ed-kuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2515" y="2410"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>

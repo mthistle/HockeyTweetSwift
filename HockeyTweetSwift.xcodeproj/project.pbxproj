@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6BFCCA6F196A6A2500AA661D /* HockeyTweetSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCCA6E196A6A2500AA661D /* HockeyTweetSwiftTests.swift */; };
+		930B24201970DC7C0046D13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930B241E1970DC310046D13B /* Main.storyboard */; };
+		930B242E1970DD0E0046D13B /* players.plist in Resources */ = {isa = PBXBuildFile; fileRef = 930B242B1970DD0E0046D13B /* players.plist */; };
+		930B24301970DD0E0046D13B /* Arenas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 930B242D1970DD0E0046D13B /* Arenas.plist */; };
+		930B24371970DD2E0046D13B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24311970DD2E0046D13B /* icon.png */; };
+		930B24381970DD2E0046D13B /* schedules.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24321970DD2E0046D13B /* schedules.png */; };
+		930B24391970DD2E0046D13B /* teams.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24331970DD2E0046D13B /* teams.png */; };
+		930B243A1970DD2E0046D13B /* thumbs-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24341970DD2E0046D13B /* thumbs-down.png */; };
+		930B243B1970DD2E0046D13B /* centre_ice.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24351970DD2E0046D13B /* centre_ice.png */; };
+		930B243C1970DD2E0046D13B /* rink.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24361970DD2E0046D13B /* rink.png */; };
+		930B24401970DE3A0046D13B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930B243F1970DE3A0046D13B /* Images.xcassets */; };
+		9391B3141970DA2B00963250 /* ActionStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B30D1970DA2B00963250 /* ActionStripViewController.swift */; };
+		9391B3151970DA2B00963250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B30E1970DA2B00963250 /* AppDelegate.swift */; };
+		9391B3161970DA2B00963250 /* ArenaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B30F1970DA2B00963250 /* ArenaPicker.swift */; };
+		9391B3171970DA2B00963250 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3101970DA2B00963250 /* ComposeViewController.swift */; };
+		9391B3181970DA2B00963250 /* FanFavsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3111970DA2B00963250 /* FanFavsPicker.swift */; };
+		9391B3191970DA2B00963250 /* PenaltyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3121970DA2B00963250 /* PenaltyPicker.swift */; };
+		9391B31A1970DA2B00963250 /* TeamPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3131970DA2B00963250 /* TeamPicker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6BFCCA69196A6A2500AA661D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BFCCA4C196A6A2500AA661D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BFCCA53196A6A2500AA661D;
+			remoteInfo = SwiftTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6BB4225A196BB894002D634A /* Players.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Players.h; sourceTree = "<group>"; };
+		6BB4225B196BB894002D634A /* Players.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Players.m; sourceTree = "<group>"; };
+		6BFCCA54196A6A2500AA661D /* HockeyTweetSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HockeyTweetSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BFCCA58196A6A2500AA661D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BFCCA68196A6A2500AA661D /* HockeyTweetSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HockeyTweetSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BFCCA6D196A6A2500AA661D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BFCCA6E196A6A2500AA661D /* HockeyTweetSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyTweetSwiftTests.swift; sourceTree = "<group>"; };
+		930B241E1970DC310046D13B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = HockeyTweetSwift/Resources/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		930B242B1970DD0E0046D13B /* players.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = players.plist; path = HockeyTweetSwift/Resources/players.plist; sourceTree = SOURCE_ROOT; };
+		930B242D1970DD0E0046D13B /* Arenas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Arenas.plist; path = HockeyTweetSwift/Resources/Arenas.plist; sourceTree = SOURCE_ROOT; };
+		930B24311970DD2E0046D13B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = HockeyTweetSwift/Images/icon.png; sourceTree = SOURCE_ROOT; };
+		930B24321970DD2E0046D13B /* schedules.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = schedules.png; path = HockeyTweetSwift/Images/schedules.png; sourceTree = SOURCE_ROOT; };
+		930B24331970DD2E0046D13B /* teams.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teams.png; path = HockeyTweetSwift/Images/teams.png; sourceTree = SOURCE_ROOT; };
+		930B24341970DD2E0046D13B /* thumbs-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-down.png"; path = "HockeyTweetSwift/Images/thumbs-down.png"; sourceTree = SOURCE_ROOT; };
+		930B24351970DD2E0046D13B /* centre_ice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = centre_ice.png; path = HockeyTweetSwift/Images/centre_ice.png; sourceTree = SOURCE_ROOT; };
+		930B24361970DD2E0046D13B /* rink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rink.png; path = HockeyTweetSwift/Images/rink.png; sourceTree = SOURCE_ROOT; };
+		930B243F1970DE3A0046D13B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HockeyTweetSwift/Images.xcassets; sourceTree = "<group>"; };
+		93843752196FB5910053B320 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		93843753196FB5910053B320 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		9391B30D1970DA2B00963250 /* ActionStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStripViewController.swift; sourceTree = "<group>"; };
+		9391B30E1970DA2B00963250 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9391B30F1970DA2B00963250 /* ArenaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArenaPicker.swift; sourceTree = "<group>"; };
+		9391B3101970DA2B00963250 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		9391B3111970DA2B00963250 /* FanFavsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanFavsPicker.swift; sourceTree = "<group>"; };
+		9391B3121970DA2B00963250 /* PenaltyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenaltyPicker.swift; sourceTree = "<group>"; };
+		9391B3131970DA2B00963250 /* TeamPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPicker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6BFCCA51196A6A2500AA661D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BFCCA65196A6A2500AA661D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6BB42234196BB493002D634A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				930B24311970DD2E0046D13B /* icon.png */,
+				930B24321970DD2E0046D13B /* schedules.png */,
+				930B24331970DD2E0046D13B /* teams.png */,
+				930B24341970DD2E0046D13B /* thumbs-down.png */,
+				930B24351970DD2E0046D13B /* centre_ice.png */,
+				930B24361970DD2E0046D13B /* rink.png */,
+			);
+			name = Images;
+			path = HockeyTweetSwift/Images;
+			sourceTree = "<group>";
+		};
+		6BB42255196BB894002D634A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				93843753196FB5910053B320 /* ComposeViewController.h */,
+				93843752196FB5910053B320 /* ComposeViewController.m */,
+				6BB4225A196BB894002D634A /* Players.h */,
+				6BB4225B196BB894002D634A /* Players.m */,
+			);
+			name = Models;
+			path = HockeyTweetSwift/Models;
+			sourceTree = "<group>";
+		};
+		6BB42265196BBC8F002D634A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				930B242B1970DD0E0046D13B /* players.plist */,
+				930B242D1970DD0E0046D13B /* Arenas.plist */,
+				930B241E1970DC310046D13B /* Main.storyboard */,
+			);
+			name = Resources;
+			path = HockeyTweetSwift/Resources;
+			sourceTree = "<group>";
+		};
+		6BFCCA4B196A6A2500AA661D = {
+			isa = PBXGroup;
+			children = (
+				930B243F1970DE3A0046D13B /* Images.xcassets */,
+				6BFCCA56196A6A2500AA661D /* SwiftHockeyTweet */,
+				6BFCCA6B196A6A2500AA661D /* HockeyTweetSwiftTests */,
+				6BFCCA55196A6A2500AA661D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6BFCCA55196A6A2500AA661D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BFCCA54196A6A2500AA661D /* HockeyTweetSwift.app */,
+				6BFCCA68196A6A2500AA661D /* HockeyTweetSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6BFCCA56196A6A2500AA661D /* SwiftHockeyTweet */ = {
+			isa = PBXGroup;
+			children = (
+				9391B30C1970DA2B00963250 /* ViewControllers */,
+				6BB42265196BBC8F002D634A /* Resources */,
+				6BB42255196BB894002D634A /* Models */,
+				6BB42234196BB493002D634A /* Images */,
+				6BFCCA57196A6A2500AA661D /* Supporting Files */,
+			);
+			name = SwiftHockeyTweet;
+			path = SwiftTest;
+			sourceTree = "<group>";
+		};
+		6BFCCA57196A6A2500AA661D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BFCCA58196A6A2500AA661D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = HockeyTweetSwift;
+			sourceTree = "<group>";
+		};
+		6BFCCA6B196A6A2500AA661D /* HockeyTweetSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				6BFCCA6E196A6A2500AA661D /* HockeyTweetSwiftTests.swift */,
+				6BFCCA6C196A6A2500AA661D /* Supporting Files */,
+			);
+			path = HockeyTweetSwiftTests;
+			sourceTree = "<group>";
+		};
+		6BFCCA6C196A6A2500AA661D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BFCCA6D196A6A2500AA661D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9391B30C1970DA2B00963250 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9391B30D1970DA2B00963250 /* ActionStripViewController.swift */,
+				9391B30E1970DA2B00963250 /* AppDelegate.swift */,
+				9391B30F1970DA2B00963250 /* ArenaPicker.swift */,
+				9391B3101970DA2B00963250 /* ComposeViewController.swift */,
+				9391B3111970DA2B00963250 /* FanFavsPicker.swift */,
+				9391B3121970DA2B00963250 /* PenaltyPicker.swift */,
+				9391B3131970DA2B00963250 /* TeamPicker.swift */,
+			);
+			name = ViewControllers;
+			path = HockeyTweetSwift/ViewControllers;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6BFCCA53196A6A2500AA661D /* HockeyTweetSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BFCCA72196A6A2500AA661D /* Build configuration list for PBXNativeTarget "HockeyTweetSwift" */;
+			buildPhases = (
+				6BFCCA50196A6A2500AA661D /* Sources */,
+				6BFCCA51196A6A2500AA661D /* Frameworks */,
+				6BFCCA52196A6A2500AA661D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HockeyTweetSwift;
+			productName = SwiftTest;
+			productReference = 6BFCCA54196A6A2500AA661D /* HockeyTweetSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6BFCCA67196A6A2500AA661D /* HockeyTweetSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BFCCA75196A6A2500AA661D /* Build configuration list for PBXNativeTarget "HockeyTweetSwiftTests" */;
+			buildPhases = (
+				6BFCCA64196A6A2500AA661D /* Sources */,
+				6BFCCA65196A6A2500AA661D /* Frameworks */,
+				6BFCCA66196A6A2500AA661D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6BFCCA6A196A6A2500AA661D /* PBXTargetDependency */,
+			);
+			name = HockeyTweetSwiftTests;
+			productName = SwiftTestTests;
+			productReference = 6BFCCA68196A6A2500AA661D /* HockeyTweetSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6BFCCA4C196A6A2500AA661D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Test;
+				TargetAttributes = {
+					6BFCCA53196A6A2500AA661D = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					6BFCCA67196A6A2500AA661D = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 6BFCCA53196A6A2500AA661D;
+					};
+				};
+			};
+			buildConfigurationList = 6BFCCA4F196A6A2500AA661D /* Build configuration list for PBXProject "HockeyTweetSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6BFCCA4B196A6A2500AA661D;
+			productRefGroup = 6BFCCA55196A6A2500AA661D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6BFCCA53196A6A2500AA661D /* HockeyTweetSwift */,
+				6BFCCA67196A6A2500AA661D /* HockeyTweetSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6BFCCA52196A6A2500AA661D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				930B243B1970DD2E0046D13B /* centre_ice.png in Resources */,
+				930B24201970DC7C0046D13B /* Main.storyboard in Resources */,
+				930B243A1970DD2E0046D13B /* thumbs-down.png in Resources */,
+				930B24381970DD2E0046D13B /* schedules.png in Resources */,
+				930B24401970DE3A0046D13B /* Images.xcassets in Resources */,
+				930B24301970DD0E0046D13B /* Arenas.plist in Resources */,
+				930B24371970DD2E0046D13B /* icon.png in Resources */,
+				930B242E1970DD0E0046D13B /* players.plist in Resources */,
+				930B243C1970DD2E0046D13B /* rink.png in Resources */,
+				930B24391970DD2E0046D13B /* teams.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BFCCA66196A6A2500AA661D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6BFCCA50196A6A2500AA661D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9391B3151970DA2B00963250 /* AppDelegate.swift in Sources */,
+				9391B3181970DA2B00963250 /* FanFavsPicker.swift in Sources */,
+				9391B3161970DA2B00963250 /* ArenaPicker.swift in Sources */,
+				9391B31A1970DA2B00963250 /* TeamPicker.swift in Sources */,
+				9391B3191970DA2B00963250 /* PenaltyPicker.swift in Sources */,
+				9391B3141970DA2B00963250 /* ActionStripViewController.swift in Sources */,
+				9391B3171970DA2B00963250 /* ComposeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BFCCA64196A6A2500AA661D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BFCCA6F196A6A2500AA661D /* HockeyTweetSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6BFCCA6A196A6A2500AA661D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BFCCA53196A6A2500AA661D /* HockeyTweetSwift */;
+			targetProxy = 6BFCCA69196A6A2500AA661D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6BFCCA70196A6A2500AA661D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6BFCCA71196A6A2500AA661D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6BFCCA73196A6A2500AA661D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = HockeyTweetSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = HockeyTweetSwift;
+			};
+			name = Debug;
+		};
+		6BFCCA74196A6A2500AA661D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = HockeyTweetSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = HockeyTweetSwift;
+			};
+			name = Release;
+		};
+		6BFCCA76196A6A2500AA661D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftTest.app/SwiftTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = HockeyTweetSwiftTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		6BFCCA77196A6A2500AA661D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftTest.app/SwiftTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = HockeyTweetSwiftTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6BFCCA4F196A6A2500AA661D /* Build configuration list for PBXProject "HockeyTweetSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BFCCA70196A6A2500AA661D /* Debug */,
+				6BFCCA71196A6A2500AA661D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BFCCA72196A6A2500AA661D /* Build configuration list for PBXNativeTarget "HockeyTweetSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BFCCA73196A6A2500AA661D /* Debug */,
+				6BFCCA74196A6A2500AA661D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BFCCA75196A6A2500AA661D /* Build configuration list for PBXNativeTarget "HockeyTweetSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BFCCA76196A6A2500AA661D /* Debug */,
+				6BFCCA77196A6A2500AA661D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6BFCCA4C196A6A2500AA661D /* Project object */;
+}
