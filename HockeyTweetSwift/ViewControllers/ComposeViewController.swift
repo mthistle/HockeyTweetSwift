@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 // We need to know when to commit a change to the UITextView from the UIPickerView
 // and when the selection has changed. I will do that by tracking the currently
@@ -127,14 +128,38 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         textView.resignFirstResponder()
    }
 
-    func didPressShareButton() {
-        NSLog("Share Button")
+    @IBAction func didPressShareButton() {
+        // From: https://dev.twitter.com/docs/ios/using-tweet-sheet
+        //  Create an instance of the Tweet Sheet
+        var tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        
+        // Sets the completion handler.  Note that we don't know which thread the
+        // block will be called on, so we need to ensure that any required UI
+        // updates occur on the main queue
+        tweetSheet.completionHandler = ({
+            switch($0) {
+                //  This means the user cancelled without sending the Tweet
+            case .Cancelled:
+                self.didDismissShareDialog(ShareResult.ShareCancelled)
+                //  This means the user hit 'Send'
+            case .Done:
+                self.didDismissShareDialog(ShareResult.ShareSuccess)
+            }
+        })
+        
+        //  Set the initial body of the Tweet
+        tweetSheet.setInitialText(textView.text)
+        
+        //  Presents the Tweet Sheet to the user
+        self.presentViewController(tweetSheet, animated: true, completion: ({
+            }))
     }
 
     func didDismissShareDialog(shareResult: ShareResult) {
+        // TODO: Bug here if the user tries to share and no Twitter account is setup. This method gets called from didPressButton completionHandler with ShareSuccess even when the completionHandler got a result of Canceclled.
         switch (shareResult) {
         case .ShareSuccess:
-            NSLog("\(shareResult)")
+            NSLog(shareResult.description())
         default:
             textView.text = ""
             charactersRemainingLabel.text = "\(maxChars)"

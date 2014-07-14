@@ -18,6 +18,7 @@
 		930B243B1970DD2E0046D13B /* centre_ice.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24351970DD2E0046D13B /* centre_ice.png */; };
 		930B243C1970DD2E0046D13B /* rink.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24361970DD2E0046D13B /* rink.png */; };
 		930B24401970DE3A0046D13B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930B243F1970DE3A0046D13B /* Images.xcassets */; };
+		93464429197351330076F450 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93464428197351330076F450 /* Social.framework */; };
 		936DC06E197258F8003DBB1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC06D197258F8003DBB1A /* AppDelegate.swift */; };
 		936DC070197326AE003DBB1A /* Arenas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC06F197326AE003DBB1A /* Arenas.swift */; };
 		936DC072197326BE003DBB1A /* FanFavs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC071197326BE003DBB1A /* FanFavs.swift */; };
@@ -59,6 +60,7 @@
 		930B24351970DD2E0046D13B /* centre_ice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = centre_ice.png; path = HockeyTweetSwift/Images/centre_ice.png; sourceTree = SOURCE_ROOT; };
 		930B24361970DD2E0046D13B /* rink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rink.png; path = HockeyTweetSwift/Images/rink.png; sourceTree = SOURCE_ROOT; };
 		930B243F1970DE3A0046D13B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HockeyTweetSwift/Images.xcassets; sourceTree = "<group>"; };
+		93464428197351330076F450 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		936DC06D197258F8003DBB1A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = HockeyTweetSwift/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		936DC06F197326AE003DBB1A /* Arenas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Arenas.swift; path = HockeyTweetSwift/Models/Arenas.swift; sourceTree = SOURCE_ROOT; };
 		936DC071197326BE003DBB1A /* FanFavs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FanFavs.swift; path = HockeyTweetSwift/Models/FanFavs.swift; sourceTree = SOURCE_ROOT; };
@@ -79,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93464429197351330076F450 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +142,7 @@
 				930B243F1970DE3A0046D13B /* Images.xcassets */,
 				6BFCCA56196A6A2500AA661D /* SwiftHockeyTweet */,
 				6BFCCA6B196A6A2500AA661D /* HockeyTweetSwiftTests */,
+				9346442A197351640076F450 /* Frameworks */,
 				6BFCCA55196A6A2500AA661D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,6 +195,14 @@
 				6BFCCA6D196A6A2500AA661D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9346442A197351640076F450 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93464428197351330076F450 /* Social.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		936DC0771973270D003DBB1A /* ModelViews */ = {
