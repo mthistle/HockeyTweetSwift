@@ -32,8 +32,8 @@ class ActionStripViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

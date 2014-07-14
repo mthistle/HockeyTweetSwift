@@ -81,12 +81,12 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        pickerView.dataSource = penalties
-        pickerView.delegate = penalties
-        pickerView.reloadAllComponents()
+        self.didPressPenalitesButton()
         textView.delegate = self
         textView.text = ""
-        
+        // Let's round the corners of our UITextView
+        textView.layer.cornerRadius = 8.0
+        textView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
         // Set picker delegate
         arenas.delegate = self
     }

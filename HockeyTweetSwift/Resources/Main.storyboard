@@ -16,25 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-qk-SOY">
-                                <rect key="frame" x="0.0" y="262" width="480" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="M3v-SE-3gg"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="M3v-SE-3gg"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="M3v-SE-3gg"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="0Ze-pV-tAd" kind="embed" identifier="embedActionStripSegue" id="2fF-ng-upx"/>
-                                </connections>
-                            </containerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVg-zn-a1n">
                                 <rect key="frame" x="0.0" y="318" width="480" height="162"/>
                             </pickerView>
@@ -69,6 +50,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-qk-SOY">
+                                <rect key="frame" x="0.0" y="262" width="480" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="J1I-cY-jyn"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="0Ze-pV-tAd" kind="embed" identifier="embedActionStripSegue" id="2fF-ng-upx"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
