@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o2U-Zw-fHK">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
     </dependencies>
     <scenes>
@@ -19,28 +20,13 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVg-zn-a1n">
                                 <rect key="frame" x="0.0" y="318" width="480" height="162"/>
                             </pickerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-yc-dsl">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-yc-dsl">
                                 <rect key="frame" x="20" y="225" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-qk-SOY">
-                                <rect key="frame" x="0.0" y="254" width="480" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="vld-d1-zTK"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="0Ze-pV-tAd" kind="embed" identifier="embedActionStripSegue" id="2fF-ng-upx"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUe-34-AlR">
-                                <rect key="frame" x="0.0" y="302" width="480" height="34"/>
-                                <connections>
-                                    <segue destination="jCh-Uo-vje" kind="embed" identifier="pickerButtonBarSegue" id="WfS-SX-q4m"/>
-                                </connections>
-                            </containerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiT-Pl-dtU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiT-Pl-dtU">
                                 <rect key="frame" x="20" y="51" width="440" height="166"/>
                                 <color key="backgroundColor" red="0.88117781929347827" green="0.88117781929347827" blue="0.88117781929347827" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -59,7 +45,7 @@
                                     <outlet property="delegate" destination="o2U-Zw-fHK" id="kk4-XZ-s5q"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqf-5S-RcW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqf-5S-RcW">
                                 <rect key="frame" x="414" y="221" width="40" height="30"/>
                                 <state key="normal" title="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,6 +54,34 @@
                                     <action selector="didPressShareButton" destination="o2U-Zw-fHK" eventType="touchUpInside" id="IWU-ti-FI6"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUe-34-AlR">
+                                <rect key="frame" x="0.0" y="302" width="480" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="DWn-9o-y6K"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DWn-9o-y6K"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="DWn-9o-y6K"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="jCh-Uo-vje" kind="embed" identifier="pickerButtonBarSegue" id="WfS-SX-q4m"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-qk-SOY">
+                                <rect key="frame" x="0.0" y="254" width="480" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="vld-d1-zTK"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="0Ze-pV-tAd" kind="embed" identifier="embedActionStripSegue" id="2fF-ng-upx"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -76,7 +90,9 @@
                                 <variation key="heightClass=regular" constant="8"/>
                             </constraint>
                             <constraint firstItem="rqf-5S-RcW" firstAttribute="trailing" secondItem="PiT-Pl-dtU" secondAttribute="trailing" id="246-aJ-Syl"/>
-                            <constraint firstItem="xYP-kW-HjV" firstAttribute="top" secondItem="DUe-34-AlR" secondAttribute="bottom" constant="144" id="5Tt-vT-jWd"/>
+                            <constraint firstItem="xYP-kW-HjV" firstAttribute="top" secondItem="DUe-34-AlR" secondAttribute="bottom" constant="144" id="5Tt-vT-jWd">
+                                <variation key="heightClass=regular" constant="179"/>
+                            </constraint>
                             <constraint firstItem="DUe-34-AlR" firstAttribute="trailing" secondItem="iMN-qk-SOY" secondAttribute="trailing" id="5ii-9n-XYy"/>
                             <constraint firstAttribute="bottom" secondItem="TVg-zn-a1n" secondAttribute="bottom" id="8Aq-7F-Dld"/>
                             <constraint firstAttribute="trailing" secondItem="PiT-Pl-dtU" secondAttribute="trailing" constant="20" id="B0d-gc-Gnw"/>
@@ -89,10 +105,14 @@
                             <constraint firstAttribute="trailing" secondItem="TVg-zn-a1n" secondAttribute="trailing" id="JlD-cT-mOg"/>
                             <constraint firstItem="iMN-qk-SOY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yeU-yc-dsl" secondAttribute="bottom" constant="8" id="MKa-Ft-EDE"/>
                             <constraint firstItem="PiT-Pl-dtU" firstAttribute="leading" secondItem="rqT-ef-pgo" secondAttribute="leading" constant="20" id="T1T-M6-zAv"/>
-                            <constraint firstItem="TVg-zn-a1n" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" constant="16" id="WC5-L3-l5k"/>
+                            <constraint firstItem="TVg-zn-a1n" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" constant="16" id="WC5-L3-l5k">
+                                <variation key="heightClass=regular" constant="50"/>
+                            </constraint>
                             <constraint firstItem="rqf-5S-RcW" firstAttribute="top" secondItem="rqT-ef-pgo" secondAttribute="top" constant="225" id="Zdr-vg-7ly"/>
                             <constraint firstItem="DUe-34-AlR" firstAttribute="leading" secondItem="iMN-qk-SOY" secondAttribute="leading" id="eXa-0a-X5P"/>
-                            <constraint firstItem="DUe-34-AlR" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" id="iJY-dy-Q4x"/>
+                            <constraint firstItem="DUe-34-AlR" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" id="iJY-dy-Q4x">
+                                <variation key="heightClass=regular" constant="-1"/>
+                            </constraint>
                             <constraint firstItem="TVg-zn-a1n" firstAttribute="leading" secondItem="rqT-ef-pgo" secondAttribute="leading" id="k8f-38-XVl"/>
                             <constraint firstAttribute="trailing" secondItem="iMN-qk-SOY" secondAttribute="trailing" id="pwB-ce-GAM"/>
                             <constraint firstItem="iMN-qk-SOY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rqf-5S-RcW" secondAttribute="bottom" constant="3" id="tZa-Gc-wzo"/>
