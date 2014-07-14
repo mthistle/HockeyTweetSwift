@@ -11,7 +11,6 @@ import UIKit
 class ArenaPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let arenas: Array<String>
-    var delegate: ComposeViewProtocol?
     // When we switch views we need to keep the last selected row when this view
     // was active. We also want to start in the middle when we select a picker.
     var selectedRow: Int
@@ -52,7 +51,6 @@ class ArenaPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
         selectedRow = row
-        delegate?.didChooseUIPickerText(arenas[row])
     }
     
 }

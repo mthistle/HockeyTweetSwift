@@ -19,21 +19,36 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVg-zn-a1n">
                                 <rect key="frame" x="0.0" y="318" width="480" height="162"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqf-5S-RcW">
-                                <rect key="frame" x="414" y="221" width="40" height="30"/>
-                                <state key="normal" title="Share">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-yc-dsl">
+                                <rect key="frame" x="20" y="225" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-qk-SOY">
+                                <rect key="frame" x="0.0" y="254" width="480" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="vld-d1-zTK"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="didPressShareButton" destination="o2U-Zw-fHK" eventType="touchUpInside" id="IWU-ti-FI6"/>
+                                    <segue destination="0Ze-pV-tAd" kind="embed" identifier="embedActionStripSegue" id="2fF-ng-upx"/>
                                 </connections>
-                            </button>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUe-34-AlR">
+                                <rect key="frame" x="0.0" y="302" width="480" height="34"/>
+                                <connections>
+                                    <segue destination="jCh-Uo-vje" kind="embed" identifier="pickerButtonBarSegue" id="WfS-SX-q4m"/>
+                                </connections>
+                            </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiT-Pl-dtU">
                                 <rect key="frame" x="20" y="51" width="440" height="166"/>
                                 <color key="backgroundColor" red="0.88117781929347827" green="0.88117781929347827" blue="0.88117781929347827" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="51" width="440" height="166"/>
+                                </variation>
                                 <variation key="widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="20" y="51" width="280" height="166"/>
                                 </variation>
@@ -44,45 +59,60 @@
                                     <outlet property="delegate" destination="o2U-Zw-fHK" id="kk4-XZ-s5q"/>
                                 </connections>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-yc-dsl">
-                                <rect key="frame" x="20" y="225" width="29" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-qk-SOY">
-                                <rect key="frame" x="0.0" y="262" width="480" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="J1I-cY-jyn"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqf-5S-RcW">
+                                <rect key="frame" x="414" y="221" width="40" height="30"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="0Ze-pV-tAd" kind="embed" identifier="embedActionStripSegue" id="2fF-ng-upx"/>
+                                    <action selector="didPressShareButton" destination="o2U-Zw-fHK" eventType="touchUpInside" id="IWU-ti-FI6"/>
                                 </connections>
-                            </containerView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yeU-yc-dsl" firstAttribute="top" secondItem="PiT-Pl-dtU" secondAttribute="bottom" constant="8" id="1ut-4S-m1S"/>
+                            <constraint firstItem="rqf-5S-RcW" firstAttribute="top" secondItem="PiT-Pl-dtU" secondAttribute="bottom" constant="8" symbolic="YES" id="0c4-Cl-ge6"/>
+                            <constraint firstItem="yeU-yc-dsl" firstAttribute="top" secondItem="PiT-Pl-dtU" secondAttribute="bottom" constant="8" id="1ut-4S-m1S">
+                                <variation key="heightClass=regular" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="rqf-5S-RcW" firstAttribute="trailing" secondItem="PiT-Pl-dtU" secondAttribute="trailing" id="246-aJ-Syl"/>
+                            <constraint firstItem="xYP-kW-HjV" firstAttribute="top" secondItem="DUe-34-AlR" secondAttribute="bottom" constant="144" id="5Tt-vT-jWd"/>
+                            <constraint firstItem="DUe-34-AlR" firstAttribute="trailing" secondItem="iMN-qk-SOY" secondAttribute="trailing" id="5ii-9n-XYy"/>
                             <constraint firstAttribute="bottom" secondItem="TVg-zn-a1n" secondAttribute="bottom" id="8Aq-7F-Dld"/>
                             <constraint firstAttribute="trailing" secondItem="PiT-Pl-dtU" secondAttribute="trailing" constant="20" id="B0d-gc-Gnw"/>
                             <constraint firstItem="yeU-yc-dsl" firstAttribute="leading" secondItem="rqT-ef-pgo" secondAttribute="leading" constant="20" id="F04-DU-Fm5"/>
-                            <constraint firstAttribute="trailing" secondItem="rqf-5S-RcW" secondAttribute="trailing" constant="26" id="FTd-RU-ffV"/>
-                            <constraint firstItem="iMN-qk-SOY" firstAttribute="top" secondItem="G6H-bk-QYl" secondAttribute="top" constant="242" id="GNg-MH-GeQ"/>
-                            <constraint firstItem="rqf-5S-RcW" firstAttribute="top" secondItem="PiT-Pl-dtU" secondAttribute="bottom" constant="4" id="GqC-V9-NYI"/>
+                            <constraint firstAttribute="trailing" secondItem="rqf-5S-RcW" secondAttribute="trailing" constant="26" id="FTd-RU-ffV">
+                                <variation key="heightClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstItem="iMN-qk-SOY" firstAttribute="leading" secondItem="rqT-ef-pgo" secondAttribute="leading" id="HkK-fP-rBY"/>
                             <constraint firstItem="PiT-Pl-dtU" firstAttribute="top" secondItem="G6H-bk-QYl" secondAttribute="bottom" constant="31" id="J3r-mM-sx4"/>
                             <constraint firstAttribute="trailing" secondItem="TVg-zn-a1n" secondAttribute="trailing" id="JlD-cT-mOg"/>
-                            <constraint firstItem="iMN-qk-SOY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yeU-yc-dsl" secondAttribute="bottom" constant="16" id="MKa-Ft-EDE"/>
+                            <constraint firstItem="iMN-qk-SOY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yeU-yc-dsl" secondAttribute="bottom" constant="8" id="MKa-Ft-EDE"/>
                             <constraint firstItem="PiT-Pl-dtU" firstAttribute="leading" secondItem="rqT-ef-pgo" secondAttribute="leading" constant="20" id="T1T-M6-zAv"/>
-                            <constraint firstItem="iMN-qk-SOY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PiT-Pl-dtU" secondAttribute="bottom" constant="45" id="V5D-7r-Ewi"/>
-                            <constraint firstItem="TVg-zn-a1n" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" constant="8" symbolic="YES" id="WC5-L3-l5k"/>
-                            <constraint firstItem="rqf-5S-RcW" firstAttribute="leading" secondItem="PiT-Pl-dtU" secondAttribute="trailing" constant="-46" id="gXc-1C-MjL"/>
-                            <constraint firstItem="iMN-qk-SOY" firstAttribute="top" secondItem="PiT-Pl-dtU" secondAttribute="bottom" priority="750" constant="45" id="ikT-H7-0D1"/>
+                            <constraint firstItem="TVg-zn-a1n" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" constant="16" id="WC5-L3-l5k"/>
+                            <constraint firstItem="rqf-5S-RcW" firstAttribute="top" secondItem="rqT-ef-pgo" secondAttribute="top" constant="225" id="Zdr-vg-7ly"/>
+                            <constraint firstItem="DUe-34-AlR" firstAttribute="leading" secondItem="iMN-qk-SOY" secondAttribute="leading" id="eXa-0a-X5P"/>
+                            <constraint firstItem="DUe-34-AlR" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" id="iJY-dy-Q4x"/>
                             <constraint firstItem="TVg-zn-a1n" firstAttribute="leading" secondItem="rqT-ef-pgo" secondAttribute="leading" id="k8f-38-XVl"/>
-                            <constraint firstItem="xYP-kW-HjV" firstAttribute="top" secondItem="iMN-qk-SOY" secondAttribute="bottom" constant="170" id="kTr-Z6-F1G"/>
                             <constraint firstAttribute="trailing" secondItem="iMN-qk-SOY" secondAttribute="trailing" id="pwB-ce-GAM"/>
-                            <constraint firstItem="iMN-qk-SOY" firstAttribute="top" secondItem="rqf-5S-RcW" secondAttribute="bottom" constant="11" id="tZa-Gc-wzo"/>
+                            <constraint firstItem="iMN-qk-SOY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rqf-5S-RcW" secondAttribute="bottom" constant="3" id="tZa-Gc-wzo"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0c4-Cl-ge6"/>
+                                <exclude reference="246-aJ-Syl"/>
+                                <exclude reference="Zdr-vg-7ly"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="tZa-Gc-wzo"/>
+                                <include reference="0c4-Cl-ge6"/>
+                                <include reference="246-aJ-Syl"/>
+                                <exclude reference="FTd-RU-ffV"/>
+                                <include reference="Zdr-vg-7ly"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="centre_ice.png" id="Jlb-5F-kah"/>
                     <connections>
@@ -95,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uO-PR-H6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2514" y="1987"/>
+            <point key="canvasLocation" x="2514" y="1986.75"/>
         </scene>
         <!--Action Strip View Controller-->
         <scene sceneID="VDN-Ua-pc2">
@@ -159,6 +189,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73N-ed-kuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2515" y="2410"/>
+        </scene>
+        <!--Picker Button View Controller-->
+        <scene sceneID="dQE-HF-GSG">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jCh-Uo-vje" customClass="PickerButtonViewController" customModule="HockeyTweetSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z8w-0V-q9p"/>
+                        <viewControllerLayoutGuide type="bottom" id="WDI-mJ-HpA"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FkI-eU-Mnj">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-xG-bdp">
+                                <rect key="frame" x="421" y="2" width="39" height="30"/>
+                                <state key="normal" title="Insert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressInsertButton:" destination="jCh-Uo-vje" eventType="touchUpInside" id="rh3-Ba-ERq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fd2-xG-bdp" secondAttribute="trailing" constant="20" id="Wke-qw-Y7f"/>
+                            <constraint firstItem="fd2-xG-bdp" firstAttribute="leading" relation="lessThanOrEqual" secondItem="FkI-eU-Mnj" secondAttribute="leading" constant="421" id="fmv-yy-5pn"/>
+                            <constraint firstItem="fd2-xG-bdp" firstAttribute="top" secondItem="Z8w-0V-q9p" secondAttribute="bottom" constant="2" id="h3A-Hz-OjE"/>
+                            <constraint firstItem="WDI-mJ-HpA" firstAttribute="top" secondItem="fd2-xG-bdp" secondAttribute="bottom" constant="2" id="kig-9F-Gfw"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNu-gq-nQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3079" y="2067"/>
         </scene>
     </scenes>
     <resources>

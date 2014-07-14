@@ -9,18 +9,6 @@
 import UIKit
 import Social
 
-// We need to know when to commit a change to the UITextView from the UIPickerView
-// and when the selection has changed. I will do that by tracking the currently
-// selected text with a variable. Then when the text changes that is coming from
-// from the picker I can update the current text.
-protocol ComposeViewProtocol {
-    // Called when a user selects a text item from the picker
-    func didChooseUIPickerText(textToAdd: String)
-    // Called when a user dismisses the active picker by changing pickers or
-    // switching to the UITextView to enter text
-    func didResignFirstResponderForUIPickerView()
-}
-
 enum ShareResult {
     case ShareSuccess, ShareErrUnknown, ShareAccountError, ShareNetworkError, ShareCancelled
     
@@ -40,7 +28,7 @@ enum ShareResult {
     }
 }
 
-class ComposeViewController: UIViewController, ActionStripSelection, UITextViewDelegate, ComposeViewProtocol {
+class ComposeViewController: UIViewController, ActionStripSelection, UITextViewDelegate, PickerButtonBarDelegate {
 
     @IBOutlet var actionStripContainer     : UIView
     @IBOutlet var pickerView               : UIPickerView
@@ -48,20 +36,20 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     @IBOutlet var charactersRemainingLabel : UILabel
     @IBOutlet var shareButton              : UIButton
     
-    var penalties : PenaltyPicker
-    var teams     : TeamPicker
-    var arenas    : ArenaPicker
-    var fanfavs   : FanFavsPicker
+    var penaltyPicker : PenaltyPicker
+    var teamPicker    : TeamPicker
+    var arenaPicker   : ArenaPicker
+    var fanfavPicker  : FanFavsPicker
     
-    let maxChars  : Int = 140
-    var currentPickerText: String
-    var currentCommittedText: String
+    let maxChars             : Int = 140
+    var currentPickerText    : String
+    var currentCommittedText : String
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        penalties = PenaltyPicker()
-        teams = TeamPicker()
-        arenas = ArenaPicker()
-        fanfavs = FanFavsPicker()
+        penaltyPicker = PenaltyPicker()
+        teamPicker = TeamPicker()
+        arenaPicker = ArenaPicker()
+        fanfavPicker = FanFavsPicker()
         currentPickerText = ""
         currentCommittedText = ""
         textView.text = ""
@@ -69,10 +57,10 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     }
     
     init(coder aDecoder: NSCoder!) {
-        penalties = PenaltyPicker()
-        teams = TeamPicker()
-        arenas = ArenaPicker()
-        fanfavs = FanFavsPicker()
+        penaltyPicker = PenaltyPicker()
+        teamPicker = TeamPicker()
+        arenaPicker = ArenaPicker()
+        fanfavPicker = FanFavsPicker()
         currentPickerText = ""
         currentCommittedText = ""
         super.init(coder: aDecoder)
@@ -87,8 +75,6 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         // Let's round the corners of our UITextView
         textView.layer.cornerRadius = 8.0
         textView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
-        // Set picker delegate
-        arenas.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,35 +84,58 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     }
 
     func didPressTeamsButton() {
-        pickerView.dataSource = teams
-        pickerView.delegate = teams
+        pickerView.dataSource = teamPicker
+        pickerView.delegate = teamPicker
         pickerView.reloadAllComponents()
         textView.resignFirstResponder()
     }
 
     func didPressArenasButton() {
-        pickerView.dataSource = arenas
-        pickerView.delegate = arenas
-        pickerView.selectRow(arenas.selectedRow, inComponent: 0, animated: false)
+        pickerView.dataSource = arenaPicker
+        pickerView.delegate = arenaPicker
+        pickerView.selectRow(arenaPicker.selectedRow, inComponent: 0, animated: false)
         pickerView.reloadAllComponents()
         textView.resignFirstResponder()
     }
 
     func didPressFanFavsButton() {
-        pickerView.dataSource = fanfavs
-        pickerView.delegate = fanfavs
-        pickerView.selectRow(fanfavs.selectedRow, inComponent: 0, animated: false)
+        pickerView.dataSource = fanfavPicker
+        pickerView.delegate = fanfavPicker
+        pickerView.selectRow(fanfavPicker.selectedRow, inComponent: 0, animated: false)
         pickerView.reloadAllComponents()
         textView.resignFirstResponder()
     }
 
     func didPressPenalitesButton() {
-        pickerView.dataSource = penalties
-        pickerView.delegate = penalties
-        pickerView.selectRow(penalties.selectedRow, inComponent: 0, animated: false)
+        pickerView.dataSource = penaltyPicker
+        pickerView.delegate = penaltyPicker
+        pickerView.selectRow(penaltyPicker.selectedRow, inComponent: 0, animated: false)
         pickerView.reloadAllComponents()
         textView.resignFirstResponder()
    }
+    
+    func didPressInsertButton() {
+        var textToAdd: String
+        
+        if pickerView.numberOfComponents == 1 {
+            textToAdd = pickerView.delegate.pickerView!(pickerView, titleForRow: pickerView.selectedRowInComponent(0), forComponent: 0)
+        } else if pickerView.numberOfComponents == 2 {
+            textToAdd = pickerView.delegate.pickerView!(pickerView, titleForRow: pickerView.selectedRowInComponent(1), forComponent: 1)
+        } else {
+            NSLog("Unrecognized picker with number of components = \(pickerView.numberOfComponents)")
+            textToAdd = "--"
+        }
+        if let currentText = textView.text {
+            textView.text = "\(currentText) \(textToAdd)"
+        }
+        let charsUsed = maxChars - countElements(textView.text!)
+        charactersRemainingLabel.text = "\(charsUsed)"
+        if charsUsed < 0 {
+            charactersRemainingLabel.textColor = UIColor.redColor()
+        } else {
+            charactersRemainingLabel.textColor = UIColor.blackColor()
+        }
+    }
 
     @IBAction func didPressShareButton() {
         // From: https://dev.twitter.com/docs/ios/using-tweet-sheet
@@ -168,23 +177,6 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         
     }
     
-    func didChooseUIPickerText(textToAdd: String) {
-        if let currentText = textView.text {
-            textView.text = "\(currentText) \(textToAdd)"
-        }
-        let charsUsed = maxChars - countElements(textView.text!)
-        charactersRemainingLabel.text = "\(charsUsed)"
-        if charsUsed < 0 {
-            charactersRemainingLabel.textColor = UIColor.redColor()
-        } else {
-            charactersRemainingLabel.textColor = UIColor.blackColor()
-        }
-    }
-    
-    func didResignFirstResponderForUIPickerView() {
-        
-    }
-    
     // called when 'return' key pressed
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         return true
@@ -215,6 +207,9 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
             if "embedActionStripSegue" == segueName {
                 let asvc: ActionStripViewController = segue.destinationViewController as ActionStripViewController
                 asvc.delegate = self
+            } else if "pickerButtonBarSegue" == segueName {
+                let pbvc: PickerButtonViewController = segue.destinationViewController as PickerButtonViewController
+                pbvc.delegate = self
             }
         }
     }
