@@ -16,7 +16,7 @@ class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     //var selectedTeamRow: Int
     //var selectedPlayerRow: Int
     
-    init() {
+    override init() {
         team = Teams()
         //selectedTeamRow = team.teamTLA.count / 2
         //selectedPlayerRow = team.playersOnTeam(team.teamTLA[selectedTeamRow]).count / 2

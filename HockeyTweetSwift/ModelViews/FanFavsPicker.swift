@@ -15,7 +15,7 @@ class FanFavsPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     // was active. We also want to start in the middle when we select a picker.
     var selectedRow: Int
     
-    init() {
+    override init() {
         fanFavShortcuts = FanFavs().fanFavs
         selectedRow = fanFavShortcuts.count / 2
     }

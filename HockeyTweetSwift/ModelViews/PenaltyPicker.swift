@@ -15,7 +15,7 @@ class PenaltyPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     // was active. We also want to start in the middle when we select a picker.
     var selectedRow: Int
     
-    init()  {
+    override init()  {
         penalty = Penalties().penalties
         selectedRow = penalty.count / 2
     }

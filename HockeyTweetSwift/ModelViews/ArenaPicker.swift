@@ -15,7 +15,7 @@ class ArenaPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     // was active. We also want to start in the middle when we select a picker.
     var selectedRow: Int
     
-    init() {
+    override init() {
         arenas = Arenas().arenas
         selectedRow = arenas.count / 2
     }

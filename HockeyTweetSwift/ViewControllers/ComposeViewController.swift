@@ -30,11 +30,11 @@ enum ShareResult {
 
 class ComposeViewController: UIViewController, ActionStripSelection, UITextViewDelegate, PickerButtonBarDelegate {
 
-    @IBOutlet var actionStripContainer     : UIView
-    @IBOutlet var pickerView               : UIPickerView
-    @IBOutlet var textView                 : UITextView
-    @IBOutlet var charactersRemainingLabel : UILabel
-    @IBOutlet var shareButton              : UIButton
+    @IBOutlet var actionStripContainer     : UIView?
+    @IBOutlet var pickerView               : UIPickerView?
+    @IBOutlet var textView                 : UITextView?
+    @IBOutlet var charactersRemainingLabel : UILabel?
+    @IBOutlet var shareButton              : UIButton?
     
     var penaltyPicker : PenaltyPicker
     var teamPicker    : TeamPicker
@@ -45,18 +45,18 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     var currentPickerText    : String
     var currentCommittedText : String
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         penaltyPicker = PenaltyPicker()
         teamPicker = TeamPicker()
         arenaPicker = ArenaPicker()
         fanfavPicker = FanFavsPicker()
         currentPickerText = ""
         currentCommittedText = ""
-        textView.text = ""
+        textView!.text = ""
         super.init(nibName: nil, bundle: nil)
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         penaltyPicker = PenaltyPicker()
         teamPicker = TeamPicker()
         arenaPicker = ArenaPicker()
@@ -70,11 +70,11 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.didPressPenalitesButton()
-        textView.delegate = self
-        textView.text = ""
+        textView!.delegate = self
+        textView!.text = ""
         // Let's round the corners of our UITextView
-        textView.layer.cornerRadius = 8.0
-        textView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
+        textView!.layer.cornerRadius = 8.0
+        textView!.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,56 +84,56 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     }
 
     func didPressTeamsButton() {
-        pickerView.dataSource = teamPicker
-        pickerView.delegate = teamPicker
-        pickerView.reloadAllComponents()
-        textView.resignFirstResponder()
+        pickerView!.dataSource = teamPicker
+        pickerView!.delegate = teamPicker
+        pickerView!.reloadAllComponents()
+        textView!.resignFirstResponder()
     }
 
     func didPressArenasButton() {
-        pickerView.dataSource = arenaPicker
-        pickerView.delegate = arenaPicker
-        pickerView.selectRow(arenaPicker.selectedRow, inComponent: 0, animated: false)
-        pickerView.reloadAllComponents()
-        textView.resignFirstResponder()
+        pickerView!.dataSource = arenaPicker
+        pickerView!.delegate = arenaPicker
+        pickerView!.selectRow(arenaPicker.selectedRow, inComponent: 0, animated: false)
+        pickerView!.reloadAllComponents()
+        textView!.resignFirstResponder()
     }
 
     func didPressFanFavsButton() {
-        pickerView.dataSource = fanfavPicker
-        pickerView.delegate = fanfavPicker
-        pickerView.selectRow(fanfavPicker.selectedRow, inComponent: 0, animated: false)
-        pickerView.reloadAllComponents()
-        textView.resignFirstResponder()
+        pickerView!.dataSource = fanfavPicker
+        pickerView!.delegate = fanfavPicker
+        pickerView!.selectRow(fanfavPicker.selectedRow, inComponent: 0, animated: false)
+        pickerView!.reloadAllComponents()
+        textView!.resignFirstResponder()
     }
 
     func didPressPenalitesButton() {
-        pickerView.dataSource = penaltyPicker
-        pickerView.delegate = penaltyPicker
-        pickerView.selectRow(penaltyPicker.selectedRow, inComponent: 0, animated: false)
-        pickerView.reloadAllComponents()
-        textView.resignFirstResponder()
+        pickerView!.dataSource = penaltyPicker
+        pickerView!.delegate = penaltyPicker
+        pickerView!.selectRow(penaltyPicker.selectedRow, inComponent: 0, animated: false)
+        pickerView!.reloadAllComponents()
+        textView!.resignFirstResponder()
    }
     
     func didPressInsertButton() {
         var textToAdd: String
         
-        if pickerView.numberOfComponents == 1 {
-            textToAdd = pickerView.delegate.pickerView!(pickerView, titleForRow: pickerView.selectedRowInComponent(0), forComponent: 0)
-        } else if pickerView.numberOfComponents == 2 {
-            textToAdd = pickerView.delegate.pickerView!(pickerView, titleForRow: pickerView.selectedRowInComponent(1), forComponent: 1)
+        if pickerView!.numberOfComponents == 1 {
+            textToAdd = pickerView!.delegate.pickerView!(pickerView, titleForRow: pickerView!.selectedRowInComponent(0), forComponent: 0)
+        } else if pickerView!.numberOfComponents == 2 {
+            textToAdd = pickerView!.delegate.pickerView!(pickerView!, titleForRow: pickerView!.selectedRowInComponent(1), forComponent: 1)
         } else {
-            NSLog("Unrecognized picker with number of components = \(pickerView.numberOfComponents)")
+            NSLog("Unrecognized picker with number of components = \(pickerView!.numberOfComponents)")
             textToAdd = "--"
         }
-        if let currentText = textView.text {
-            textView.text = "\(currentText) \(textToAdd)"
+        if let currentText = textView!.text {
+            textView!.text = "\(currentText) \(textToAdd)"
         }
-        let charsUsed = maxChars - countElements(textView.text!)
-        charactersRemainingLabel.text = "\(charsUsed)"
+        let charsUsed = maxChars - countElements(textView!.text!)
+        charactersRemainingLabel!.text = "\(charsUsed)"
         if charsUsed < 0 {
-            charactersRemainingLabel.textColor = UIColor.redColor()
+            charactersRemainingLabel!.textColor = UIColor.redColor()
         } else {
-            charactersRemainingLabel.textColor = UIColor.blackColor()
+            charactersRemainingLabel!.textColor = UIColor.blackColor()
         }
     }
 
@@ -157,7 +157,7 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         })
         
         //  Set the initial body of the Tweet
-        tweetSheet.setInitialText(textView.text)
+        tweetSheet.setInitialText(textView!.text)
         
         //  Presents the Tweet Sheet to the user
         self.presentViewController(tweetSheet, animated: true, completion: ({
@@ -170,9 +170,9 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         case .ShareSuccess:
             NSLog(shareResult.description())
         default:
-            textView.text = ""
-            charactersRemainingLabel.text = "\(maxChars)"
-            charactersRemainingLabel.textColor = UIColor.blackColor()
+            textView!.text = ""
+            charactersRemainingLabel!.text = "\(maxChars)"
+            charactersRemainingLabel!.textColor = UIColor.blackColor()
         }
         
     }
@@ -197,8 +197,8 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     
     // called when clear button pressed. return NO to ignore (no notifications)
     func textFieldShouldClear(textField: UITextField!) -> Bool {
-        charactersRemainingLabel.text = "\(maxChars)"
-        charactersRemainingLabel.textColor = UIColor.blackColor()
+        charactersRemainingLabel!.text = "\(maxChars)"
+        charactersRemainingLabel!.textColor = UIColor.blackColor()
         return true
     }
     

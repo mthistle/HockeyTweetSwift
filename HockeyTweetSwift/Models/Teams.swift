@@ -77,7 +77,7 @@ class Teams: NSObject {
     // add values in the init call.
     var rosters = [String: Array<String>]()
     
-    init() {
+    override init() {
         teamNames = sorted(teamNames, { s1, s2 in return s1 < s2 })
         teamTLA = sorted(teamTLA, { s1, s2 in return s1 < s2 })
         // TODO: Ok, need to convert from NS to Swift here

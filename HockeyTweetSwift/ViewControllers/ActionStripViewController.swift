@@ -18,16 +18,16 @@ protocol ActionStripSelection {
 class ActionStripViewController: UIViewController {
 
     var delegate: ActionStripSelection?
-    @IBOutlet var teamsButton: UIButton
-    @IBOutlet var arenasButton: UIButton
-    @IBOutlet var fanFavsButton: UIButton
-    @IBOutlet var penaltiessButton: UIButton
+    @IBOutlet var teamsButton: UIButton?
+    @IBOutlet var arenasButton: UIButton?
+    @IBOutlet var fanFavsButton: UIButton?
+    @IBOutlet var penaltiessButton: UIButton?
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nil, bundle: nil)
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
     }
     
