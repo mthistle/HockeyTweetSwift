@@ -9,7 +9,7 @@
 import Foundation
 
 class Teams: NSObject {
-    let teamTLA = [
+    var teamTLA = [
         "NJD",
         "NYI",
         "NYR",
@@ -41,7 +41,7 @@ class Teams: NSObject {
         "PHX",
         "SJS"]
     
-    let teamNames = [
+    var teamNames = [
         "New Jersey Devils",
         "New York Islanders",
         "New York Rangers",

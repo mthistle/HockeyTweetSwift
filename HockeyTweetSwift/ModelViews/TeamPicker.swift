@@ -23,11 +23,11 @@ class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         super.init()
     }
 
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
     }
 
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch (component) {
             case 0:
                 return team.teamNames.count
@@ -54,7 +54,7 @@ class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 
 
     //func pickerView(pickerView: UIPickerView!, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString! // attributed title is favored if both methods are implemented
-    func pickerView(pickerView: UIPickerView!, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView! {
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView) -> UIView {
         var rowText: String
         switch (component) {
         case 0:
@@ -71,13 +71,13 @@ class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         var frame = CGRect()
         // TODO: center rows by calculating size of font and then centering that
         //frame.
-        var rowLabel = UILabel(frame: CGRectMake(0.0, 0.0, pickerView!.rowSizeForComponent(component).width, pickerView!.rowSizeForComponent(component).height))
+        var rowLabel = UILabel(frame: CGRectMake(0.0, 0.0, pickerView.rowSizeForComponent(component).width, pickerView.rowSizeForComponent(component).height))
         rowLabel.text = rowText
         rowLabel.font = UIFont.systemFontOfSize(12.0)
         return rowLabel;
     }
 
-    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
     }
 

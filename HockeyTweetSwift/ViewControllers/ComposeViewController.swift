@@ -56,7 +56,7 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         penaltyPicker = PenaltyPicker()
         teamPicker = TeamPicker()
         arenaPicker = ArenaPicker()
@@ -118,9 +118,9 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         var textToAdd: String
         
         if pickerView!.numberOfComponents == 1 {
-            textToAdd = pickerView!.delegate.pickerView!(pickerView, titleForRow: pickerView!.selectedRowInComponent(0), forComponent: 0)
+            textToAdd = pickerView!.delegate!.pickerView!(pickerView!, titleForRow: pickerView!.selectedRowInComponent(0), forComponent: 0)
         } else if pickerView!.numberOfComponents == 2 {
-            textToAdd = pickerView!.delegate.pickerView!(pickerView!, titleForRow: pickerView!.selectedRowInComponent(1), forComponent: 1)
+            textToAdd = pickerView!.delegate!.pickerView!(pickerView!, titleForRow: pickerView!.selectedRowInComponent(1), forComponent: 1)
         } else {
             NSLog("Unrecognized picker with number of components = \(pickerView!.numberOfComponents)")
             textToAdd = "--"
@@ -128,7 +128,7 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         if let currentText = textView!.text {
             textView!.text = "\(currentText) \(textToAdd)"
         }
-        let charsUsed = maxChars - countElements(textView!.text!)
+        let charsUsed = maxChars - count(textView!.text!)
         charactersRemainingLabel!.text = "\(charsUsed)"
         if charsUsed < 0 {
             charactersRemainingLabel!.textColor = UIColor.redColor()
@@ -183,7 +183,7 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     }
     
     // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
-    func textViewShouldEndEditing(textView: UITextView!) -> Bool {
+    func textViewShouldEndEditing(textView: UITextView) -> Bool {
         return true
     }
     
@@ -202,13 +202,13 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if let segueName = segue.identifier {
             if "embedActionStripSegue" == segueName {
-                let asvc: ActionStripViewController = segue.destinationViewController as ActionStripViewController
+                let asvc: ActionStripViewController = segue.destinationViewController as! ActionStripViewController
                 asvc.delegate = self
             } else if "pickerButtonBarSegue" == segueName {
-                let pbvc: PickerButtonViewController = segue.destinationViewController as PickerButtonViewController
+                let pbvc: PickerButtonViewController = segue.destinationViewController as! PickerButtonViewController
                 pbvc.delegate = self
             }
         }

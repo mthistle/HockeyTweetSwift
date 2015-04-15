@@ -20,11 +20,11 @@ class ArenaPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         selectedRow = arenas.count / 2
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arenas.count
     }
     
@@ -36,7 +36,7 @@ class ArenaPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     // these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
     // for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
     // If you return back a different object, the old one will be released. the view will be centered in the row rect
-    func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return arenas[row]
     }
     
@@ -49,7 +49,7 @@ class ArenaPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 //        return rowLabel;
 //    }
     
-    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedRow = row
     }
     
