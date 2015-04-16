@@ -35,6 +35,7 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
     @IBOutlet var textView                 : UITextView?
     @IBOutlet var charactersRemainingLabel : UILabel?
     @IBOutlet var shareButton              : UIButton?
+    @IBOutlet var hideKeyboardButton       : UIButton?
     
     var penaltyPicker : PenaltyPicker
     var teamPicker    : TeamPicker
@@ -163,6 +164,10 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         self.presentViewController(tweetSheet, animated: true, completion: ({
             }))
     }
+    
+    @IBAction func didSelectHideKeyboardButton(sender: AnyObject) {
+        textView!.resignFirstResponder()
+    }
 
     func didDismissShareDialog(shareResult: ShareResult) {
         // TODO: Bug here if the user tries to share and no Twitter account is setup. This method gets called from didPressButton completionHandler with ShareSuccess even when the completionHandler got a result of Canceclled.
@@ -187,7 +192,34 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         return true
     }
     
-    //func textFieldDidBeginEditing(textField: UITextField!) // became first responder
+    // became first responder
+    func textViewDidBeginEditing(textField: UITextView) {
+        UIView.animateWithDuration(0.4,
+            animations: {() in
+                if let button = self.hideKeyboardButton {
+                    button.hidden = false
+                }
+            },
+            completion: {(finished: Bool) in
+                if let button = self.hideKeyboardButton {
+                    button.alpha = 1.0
+                }
+        })
+    }
+    // became first responder
+    func textViewDidEndEditing(textField: UITextView) {
+        UIView.animateWithDuration(0.3,
+            animations: {() in
+                if let button = self.hideKeyboardButton {
+                    button.alpha = 0.0
+                }
+            },
+            completion: {(finished: Bool) in
+                if let button = self.hideKeyboardButton {
+                    button.hidden = finished
+                }
+        })
+    }
     //func textFieldDidEndEditing(textField: UITextField!) // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
     
     // return NO to not change text

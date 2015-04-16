@@ -29,6 +29,9 @@
 		936DC07D19732786003DBB1A /* ArenaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC07919732786003DBB1A /* ArenaPicker.swift */; };
 		936DC07E19732786003DBB1A /* PenaltyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC07A19732786003DBB1A /* PenaltyPicker.swift */; };
 		936DC07F19732786003DBB1A /* FanFavsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC07B19732786003DBB1A /* FanFavsPicker.swift */; };
+		937EE3671ADF82080030B1FB /* hide_keyboard_43807.png in Resources */ = {isa = PBXBuildFile; fileRef = 937EE3641ADF82080030B1FB /* hide_keyboard_43807.png */; };
+		937EE3681ADF82080030B1FB /* hide_keyboard_43807@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 937EE3651ADF82080030B1FB /* hide_keyboard_43807@2x.png */; };
+		937EE3691ADF82080030B1FB /* hide_keyboard_43807@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 937EE3661ADF82080030B1FB /* hide_keyboard_43807@3x.png */; };
 		9391B3141970DA2B00963250 /* ActionStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B30D1970DA2B00963250 /* ActionStripViewController.swift */; };
 		9391B3171970DA2B00963250 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9391B3101970DA2B00963250 /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,9 @@
 		936DC07919732786003DBB1A /* ArenaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArenaPicker.swift; sourceTree = "<group>"; };
 		936DC07A19732786003DBB1A /* PenaltyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenaltyPicker.swift; sourceTree = "<group>"; };
 		936DC07B19732786003DBB1A /* FanFavsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanFavsPicker.swift; sourceTree = "<group>"; };
+		937EE3641ADF82080030B1FB /* hide_keyboard_43807.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hide_keyboard_43807.png; path = HockeyTweetSwift/Images/hide_keyboard_43807.png; sourceTree = SOURCE_ROOT; };
+		937EE3651ADF82080030B1FB /* hide_keyboard_43807@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hide_keyboard_43807@2x.png"; path = "HockeyTweetSwift/Images/hide_keyboard_43807@2x.png"; sourceTree = SOURCE_ROOT; };
+		937EE3661ADF82080030B1FB /* hide_keyboard_43807@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hide_keyboard_43807@3x.png"; path = "HockeyTweetSwift/Images/hide_keyboard_43807@3x.png"; sourceTree = SOURCE_ROOT; };
 		93843752196FB5910053B320 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		93843753196FB5910053B320 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		9391B30D1970DA2B00963250 /* ActionStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStripViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 		6BB42234196BB493002D634A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				937EE3641ADF82080030B1FB /* hide_keyboard_43807.png */,
+				937EE3651ADF82080030B1FB /* hide_keyboard_43807@2x.png */,
+				937EE3661ADF82080030B1FB /* hide_keyboard_43807@3x.png */,
 				930B24311970DD2E0046D13B /* icon.png */,
 				930B24321970DD2E0046D13B /* schedules.png */,
 				930B24331970DD2E0046D13B /* teams.png */,
@@ -313,6 +322,7 @@
 			files = (
 				930B243B1970DD2E0046D13B /* centre_ice.png in Resources */,
 				930B24201970DC7C0046D13B /* Main.storyboard in Resources */,
+				937EE3681ADF82080030B1FB /* hide_keyboard_43807@2x.png in Resources */,
 				930B243A1970DD2E0046D13B /* thumbs-down.png in Resources */,
 				930B24381970DD2E0046D13B /* schedules.png in Resources */,
 				930B24401970DE3A0046D13B /* Images.xcassets in Resources */,
@@ -320,6 +330,8 @@
 				930B24371970DD2E0046D13B /* icon.png in Resources */,
 				930B242E1970DD0E0046D13B /* players.plist in Resources */,
 				930B243C1970DD2E0046D13B /* rink.png in Resources */,
+				937EE3671ADF82080030B1FB /* hide_keyboard_43807.png in Resources */,
+				937EE3691ADF82080030B1FB /* hide_keyboard_43807@3x.png in Resources */,
 				930B24391970DD2E0046D13B /* teams.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
