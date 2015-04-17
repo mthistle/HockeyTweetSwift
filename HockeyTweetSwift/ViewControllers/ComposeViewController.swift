@@ -182,16 +182,6 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         
     }
     
-    // called when 'return' key pressed
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        return true
-    }
-    
-    // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
-    func textViewShouldEndEditing(textView: UITextView) -> Bool {
-        return true
-    }
-    
     // became first responder
     func textViewDidBeginEditing(textField: UITextView) {
         UIView.animateWithDuration(0.4,
@@ -220,6 +210,30 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
                 }
         })
     }
+    
+    func textViewDidChange(textView: UITextView) {
+        var len = textView.text.lengthOfBytesUsingEncoding(NSASCIIStringEncoding)
+        
+        if (textView.text != nil && textView.text.isEmpty) {
+            charactersRemainingLabel!.text = "140"
+            textView.text = ""
+        } else {
+            var newLen = NSString(format: "%d", 140 - len)
+            charactersRemainingLabel!.text = newLen as String
+        }
+        
+        // let's help alert the user if the tweet is over 140 characters
+        if (textView.text.lengthOfBytesUsingEncoding(NSASCIIStringEncoding) > 140) {
+            // Add our charsRemianing UILabel to the navItem views so we can override
+            // the color of the title of the compose view
+            charactersRemainingLabel!.textColor = UIColor.redColor()
+        } else {
+            // Add our charsRemianing UILabel to the navItem views so we can override
+            // the color of the title of the compose view
+            charactersRemainingLabel!.textColor = UIColor.blackColor()
+        }
+    }
+    
     //func textFieldDidEndEditing(textField: UITextField!) // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
     
     // return NO to not change text
