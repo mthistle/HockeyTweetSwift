@@ -42,18 +42,6 @@ class TeamPicker: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         }
     }
 
-
-    // returns width of column and height of row for each component.
-    //func pickerView(pickerView: UIPickerView!, widthForComponent component: Int) -> CGFloat
-    //func pickerView(pickerView: UIPickerView!, rowHeightForComponent component: Int) -> CGFloat
-
-    // these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
-    // for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
-    // If you return back a different object, the old one will be released. the view will be centered in the row rect
-    // func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
-
-
-    //func pickerView(pickerView: UIPickerView!, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString! // attributed title is favored if both methods are implemented
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView) -> UIView {
         var rowText: String
         switch (component) {

@@ -18,6 +18,9 @@
 		930B243B1970DD2E0046D13B /* centre_ice.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24351970DD2E0046D13B /* centre_ice.png */; };
 		930B243C1970DD2E0046D13B /* rink.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B24361970DD2E0046D13B /* rink.png */; };
 		930B24401970DE3A0046D13B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930B243F1970DE3A0046D13B /* Images.xcassets */; };
+		931ACAC11AE218120032700D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ACAC01AE218120032700D /* SettingsViewController.swift */; };
+		931ACAC31AE2194C0032700D /* FanFavsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ACAC21AE2194C0032700D /* FanFavsTable.swift */; };
+		931ACAC51AE21C180032700D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ACAC41AE21C180032700D /* AboutViewController.swift */; };
 		93464429197351330076F450 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93464428197351330076F450 /* Social.framework */; };
 		9346442C197371E40076F450 /* PickerButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346442B197371E40076F450 /* PickerButtonViewController.swift */; };
 		936DC06E197258F8003DBB1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC06D197258F8003DBB1A /* AppDelegate.swift */; };
@@ -64,6 +67,9 @@
 		930B24351970DD2E0046D13B /* centre_ice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = centre_ice.png; path = HockeyTweetSwift/Images/centre_ice.png; sourceTree = SOURCE_ROOT; };
 		930B24361970DD2E0046D13B /* rink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rink.png; path = HockeyTweetSwift/Images/rink.png; sourceTree = SOURCE_ROOT; };
 		930B243F1970DE3A0046D13B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HockeyTweetSwift/Images.xcassets; sourceTree = "<group>"; };
+		931ACAC01AE218120032700D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		931ACAC21AE2194C0032700D /* FanFavsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanFavsTable.swift; sourceTree = "<group>"; };
+		931ACAC41AE21C180032700D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		93464428197351330076F450 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9346442B197371E40076F450 /* PickerButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerButtonViewController.swift; sourceTree = "<group>"; };
 		936DC06D197258F8003DBB1A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = HockeyTweetSwift/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -223,6 +229,7 @@
 				936DC07B19732786003DBB1A /* FanFavsPicker.swift */,
 				936DC07A19732786003DBB1A /* PenaltyPicker.swift */,
 				936DC07819732786003DBB1A /* TeamPicker.swift */,
+				931ACAC21AE2194C0032700D /* FanFavsTable.swift */,
 			);
 			name = ModelViews;
 			path = HockeyTweetSwift/ModelViews;
@@ -234,6 +241,8 @@
 				9391B30D1970DA2B00963250 /* ActionStripViewController.swift */,
 				9391B3101970DA2B00963250 /* ComposeViewController.swift */,
 				9346442B197371E40076F450 /* PickerButtonViewController.swift */,
+				931ACAC01AE218120032700D /* SettingsViewController.swift */,
+				931ACAC41AE21C180032700D /* AboutViewController.swift */,
 			);
 			name = ViewControllers;
 			path = HockeyTweetSwift/ViewControllers;
@@ -353,13 +362,16 @@
 				9346442C197371E40076F450 /* PickerButtonViewController.swift in Sources */,
 				936DC07C19732786003DBB1A /* TeamPicker.swift in Sources */,
 				936DC07E19732786003DBB1A /* PenaltyPicker.swift in Sources */,
+				931ACAC51AE21C180032700D /* AboutViewController.swift in Sources */,
 				936DC070197326AE003DBB1A /* Arenas.swift in Sources */,
+				931ACAC31AE2194C0032700D /* FanFavsTable.swift in Sources */,
 				936DC076197326DE003DBB1A /* Teams.swift in Sources */,
 				936DC074197326CD003DBB1A /* Penalties.swift in Sources */,
 				936DC07F19732786003DBB1A /* FanFavsPicker.swift in Sources */,
 				936DC072197326BE003DBB1A /* FanFavs.swift in Sources */,
 				936DC06E197258F8003DBB1A /* AppDelegate.swift in Sources */,
 				9391B3141970DA2B00963250 /* ActionStripViewController.swift in Sources */,
+				931ACAC11AE218120032700D /* SettingsViewController.swift in Sources */,
 				936DC07D19732786003DBB1A /* ArenaPicker.swift in Sources */,
 				9391B3171970DA2B00963250 /* ComposeViewController.swift in Sources */,
 			);
