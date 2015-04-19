@@ -16,7 +16,7 @@ class FanFavsTable: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if (indexPath.row <= FanFavs().fanFavs.count-2) {
+        if (indexPath.row <= FanFavs().fanFavs.count-1) {
             if let cell: AnyObject = tableView.dequeueReusableCellWithIdentifier("fanFavCell") {
               cell.textLabel??.text = FanFavs().fanFavs[indexPath.row]
               return cell as! UITableViewCell

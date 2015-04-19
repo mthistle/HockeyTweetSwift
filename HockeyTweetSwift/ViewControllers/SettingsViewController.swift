@@ -16,5 +16,13 @@ class SettingsViewController: UIViewController {
         tableViewDelegate = FanFavsTable()
         super.init(coder: aDecoder)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tableView = tableView {
+            tableView.dataSource = tableViewDelegate
+            tableView.delegate   = tableViewDelegate
+        }
+    }
 
 }

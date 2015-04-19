@@ -322,7 +322,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LCH-cB-J9J" kind="showDetail" identifier="showAbout" id="upy-w7-cBV"/>
+                                    <segue destination="LCH-cB-J9J" kind="show" identifier="showAbout" id="upy-w7-cBV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -341,6 +341,9 @@
                             <constraint firstItem="hKg-VU-gi1" firstAttribute="top" secondItem="T4j-z4-ufE" secondAttribute="bottom" constant="8" symbolic="YES" id="yQc-CK-58y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="hKg-VU-gi1" id="h4e-Fx-Ahj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbo-qp-yHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
