@@ -25,4 +25,7 @@ class SettingsViewController: UIViewController {
         }
     }
 
+    @IBAction func unwindToSettingsView(sender: UIStoryboardSegue) {
+        // Pull any data from the view controller which initiated the unwind segue.
+    }
 }

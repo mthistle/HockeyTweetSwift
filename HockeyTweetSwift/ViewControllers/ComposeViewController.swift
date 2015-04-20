@@ -260,4 +260,7 @@ class ComposeViewController: UIViewController, ActionStripSelection, UITextViewD
         }
     }
     
+    @IBAction func unwindToComposeView(sender: UIStoryboardSegue) {
+        // Pull any data from the view controller which initiated the unwind segue.
+    }
 }
